@@ -2,7 +2,7 @@
 
 ## Components
 
-![basic components](/docs/docs/assets/light%20components/light%20components/basic-components.png)
+![basic components](/docs/assets/light%20components/basic-components.png)
 
 ![complex components](/docs/assets/light%20components/complex-components.png)
 
