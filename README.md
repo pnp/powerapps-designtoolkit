@@ -1,6 +1,6 @@
-# The Power Apps Lookbook
+# The Power Apps Design Patterns
 
-> The Power Apps Lookbook is a curated repository of Power Apps UI Toolkits that you can plug and play into your apps to transform your design.
+> The Power Apps Design Patterns is a curated repository of Power Apps UI Toolkits that you can plug and play into your apps to transform your design.
 
 Objective is to make it easier for makers to build design-consistent, performant and accessible Power Apps. To achieve this, you can find
 
