@@ -25,7 +25,7 @@ The TextInput control itself will adjust in its size to a resize of the componen
 * **inputWidth** : Width of the component itself
 * **inputHeight** : Height of the component itself
 * **accentColor**:  defaults to `ColorValue("#167aad")`, determines **BorderColor** and TextColor of the `lbl_title`
-* **labelText**: defaults to `Tell us more!`, determines the **Text** of `lbl_title`
+* **labelText**: defaults to `Email`, determines the **Text** of `lbl_title`
 * **textColor**: defaults to `Black`, determines the **Color** of the `TextInput`
 * **errorText**: defaults to `"This is not a valid Email."`, determines the **Text** of the `lbl_error`. Will be shown **OnChange** in case the **Text** is doesn't match the RegEx pattern of an Email.
 * **errorColor**: defaults to `Red`, determines the **Color** of the `lbl_error`
@@ -55,7 +55,7 @@ The TextInput control itself will adjust in its size to a resize of the componen
 * **numberFieldWidth** : Width of the component itself
 * **numberFieldHeight** : Height of the component itself
 * **accentColor**:  defaults to `ColorValue("#167aad")`, determines **BorderColor** and **TextColor** of the `lbl_title`
-* **labelText**: defaults to `Amount`, determines the **Text** of `lbl_title`
+* **labelText**: defaults to `Budget`, determines the **Text** of `lbl_title`
 * **textColor**: defaults to `Black`, determines the **Color** of the `TextInput`
 * **unitFill**: defaults to `ColorFade(DarkGray, 60%)`, determines the **Fill** of the `btn_unit**
 * **unitText**: defaults to `$`, determines the **Text** of the `btn_unit**
@@ -147,14 +147,6 @@ The TextInput control itself will adjust in its size to a resize of the componen
 * **toggleBoxCheck** (Output property), returns whether the toggle value is `true` or `false`
 
 ### Switch
-
-* **inactiveFillColor**: defaults to `ColorFade(DarkGray, 60%)`, determines **Fill** of `btn_toggleBg` in inactive state
-* **activeFillColor**: defaults to `ColorValue("#167aad")`, determines **Fill** of `btn_toggleBg` in active state
-* **inactiveLabel**: defaults to `no`, determines **Text** of `lbl_toggle` in inactive state
-* **activeLabel**: defaults to `yes`, determines **Text** of `lbl_toggle` in active state
-* **circleColor**: defaults to `White`, determines the **Fill** of  `Circle`
-* **textColor**: defaults to `Black`, determines the **Color** of the `TextInput`
-* **rating** (Output property), returns the `sli_swipe.Value` 
 
 * **switchWidth** : **Width** of the `btn_bg`
 * **switchHeight** : **Height** of `btn_bg`
