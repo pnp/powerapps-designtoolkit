@@ -2,9 +2,9 @@
 
 ## Components
 
-![basic components](/assets/basic-components.png)
+![basic components](/docs/docs/assets/light%20components/light%20components/basic-components.png)
 
-![complex components](/assets/complex-components.png)
+![complex components](/docs/assets/light%20components/complex-components.png)
 
 ### TextInput
 
@@ -18,7 +18,7 @@
 
 The TextInput control itself will adjust in its size to a resize of the component and always be 10px less than the component width/height.
 
-![Textinput Component](/assets/TextInput.gif)
+![Textinput Component](/docs/assets/light%20components/TextInput.gif)
 
 ### EmailInput
 
@@ -32,7 +32,7 @@ The TextInput control itself will adjust in its size to a resize of the componen
 
 The TextInput control itself will adjust in its size to a resize of the component and always be 10px less than the component width/height.
 
-![Emailinput Component](/assets/EmailInput.gif)
+![Emailinput Component](/docs/assets/light%20components/EmailInput.gif)
 
 ### NumberField - left
 
@@ -48,7 +48,7 @@ The TextInput control itself will adjust in its size to a resize of the componen
 
 The TextInput control itself will adjust in its size to a resize of the component and always be 100px less than the component width and 40px less than the component height. (This is to make room for the error text)
 
-![Numberfield component](/assets/Numberfield.gif)
+![Numberfield component](/docs/assets/light%20components/Numberfield.gif)
 
 ### NumberField - right
 
@@ -64,7 +64,7 @@ The TextInput control itself will adjust in its size to a resize of the componen
 
 The TextInput control itself will adjust in its size to a resize of the component and always be 100px less than the component width and 40px less than the component height. (This is to make room for the error text)
 
-![Numberfield component](/assets/Numberfield.gif)
+![Numberfield component](/docs/assets/light%20components/Numberfield.gif)
 
 ### simple Toggle
 
@@ -76,7 +76,7 @@ The TextInput control itself will adjust in its size to a resize of the componen
 * **textColor**: defaults to `Black`, determines the **Color** of the `TextInput`
 * **rating** (Output property), returns the `sli_toggle.Value`
 
-![Toggle component](/assets/Toggle.gif)
+![Toggle component](/docs/assets/light%20components/Toggle.gif)
 
 ### Dropdown
 
@@ -92,7 +92,7 @@ The TextInput control itself will adjust in its size to a resize of the componen
 
 The TextInput control itself will adjust in its size to a resize of the component and always be 10px less than the component width/height.
 
-![Dropdown component](/assets/Dropdown.gif)
+![Dropdown component](/docs/assets/light%20components/Dropdown.gif)
 
 ### Multi-select Dropdown
 
@@ -108,7 +108,7 @@ The TextInput control itself will adjust in its size to a resize of the componen
 
 The TextInput control itself will adjust in its size to a resize of the component and always be 10px less than the component width/height.
 
-![Dropdown component](/assets/Multiselect.gif)
+![Dropdown component](/docs/assets/light%20components/Multiselect.gif)
 
 ### Likert
 
@@ -117,7 +117,7 @@ The TextInput control itself will adjust in its size to a resize of the componen
 * **LikertContent**: defaults to sampledata, determines content of the gallery
 * **rating** (Output property), returns the `sli_rating.Value` which corresponds to the `Id` of the selected item of the `Gallery`
 
-![Likert component](/assets/Likert.gif)
+![Likert component](/docs/assets/light%20components/Likert.gif)
 
 ### Battery
 
@@ -126,7 +126,7 @@ The TextInput control itself will adjust in its size to a resize of the componen
 * **batteryContent**, defaults `{stage5:"Crisis",stage4:"Stressed",stage3:"Languishing",stage2:"Coping",stage1:"Well"}`, determines content of the `Gallery`
 * **rating** (Output property), returns the `sli_slide.Value`
 
-![Battery component](/assets/Battery.gif)
+![Battery component](/docs/assets/light%20components/Battery.gif)
 
 ### Toggle with icons
 
@@ -162,4 +162,4 @@ The TextInput control itself will adjust in its size to a resize of the componen
 * **iconColor**, defaults to `ColorFade(DarkGray, 60%)`, determines **Fill** of `img_Moon` and `img_Sun`
 * **rating** (Output property), returns the value of `sli_slide`
 
-![toggle components](/assets/Toggles.gif)
+![toggle components](/docs/assets/light%20components/Toggles.gif)
