@@ -123,6 +123,7 @@ The TextInput control itself will adjust in its size to a resize of the componen
 
 * **colorPalette**, defaults to `{color1:ColorValue("#0E566C"),color2:ColorValue("#168aad"),color3:ColorValue("#f5f5f5"),color4:ColorValue("#8a4f7d"),color5:ColorValue("#887880")}`, determines **Fill** of `btn_compartments` in conjunction with the **colorIntensity** property.
 * **colorIntensity**, defaults to `0.5`, determines the percentage of **Fill** of `btn_compartments`
+* **textColor**, defaults to `Black`, determines the **Color** of `btn_pill`
 * **batteryContent**, defaults `{stage5:"Crisis",stage4:"Stressed",stage3:"Languishing",stage2:"Coping",stage1:"Well"}`, determines content of the `Gallery`
 * **rating** (Output property), returns the `sli_slide.Value`
 
@@ -166,10 +167,38 @@ The TextInput control itself will adjust in its size to a resize of the componen
 * **BarHeight**, defaults to `42`, determines the **Height** of the `btn_Total`
 * **accentColor**, defaults to `ColorValue("#167aad")` , determines the **Color**of the `btn_barCurrent`
 
-
 ### progress donut
 
 * **accentColor**: defaults to `ColorValue("#167aad")`, determines the **Fill** of the `CurrentCircle`
 * **primaryColor**: defaults to `"ColorFade(DarkGray, 60%)"`, determines the **Fill** of the `BackgroundCircle`
-* 
+
 ![progress components](assets/light%20components/progress.gif)
+
+The component works with a hidden slider.
+
+### Likert pill
+
+* **colorPalette**: Defaults to `{color1:ColorValue("#0E566C"),color2:ColorValue("#168aad"),color3:ColorValue("#f5f5f5"),color4:ColorValue("#8a4f7d"),color5:ColorValue("#887880")}`, determines **Fill** of `btn_pill` in conjunction with the **colorIntensity** property
+* **colorIntensity**, defaults to `0.5`, determines the percentage of **Fill** of `btn_pill`
+* **textColor**, defaults to `Black`, determines the **Color** of `btn_pill`
+* **galleryContent**, defaults to `Table({Id:1,FillColor:cmp_Light_LikertPill.colorPalette.color1,Comment:"I hate it",Rating:"Strongly disagree"},{Id:2,FillColor:cmp_Light_LikertPill.colorPalette.color2,Comment:"Meh",Rating:"Disagree"},{Id:3,FillColor:cmp_Light_LikertPill.colorPalette.color3,Comment:"Doesn't excite me",Rating:"Neither"},{Id:4,FillColor:cmp_Light_LikertPill.colorPalette.color4,Comment:"That's pretty cool",Rating:"Agree"},{Id:5,FillColor:cmp_Light_LikertPill.colorPalette.color5,Comment:"Nailed it - loved it",Rating:"Strongly agree"})`, determines content of the galllery
+* **rating** (Output property), returns the `sli_slide.Value`
+
+![Likertpill component](assets/light%20components/LikertPill.gif)
+
+### Swipe right
+
+* **swipeWidth**: defaults to `250`, determines Width of the component
+* **swipeHeight**: defaults to `80`, determines Height of the component
+* **primaryColor**: defaults to `ColorFade(DarkGray, 60%)`, determines **Fill** of `btn_background`
+* **secondaryColor**: defaults to `DarkGray`, determines **Fill** of `btn_swipe`
+* **accentColor**: defaults to `ColorValue("#167aad")`, determines **Color** of `icon_success`
+* **backgroundText1**: defaults to `"Swipe to approve"`, determines **Text** of `btn_background`in inactive state
+* **backgroundText2**: defaults to `"thank you"`, determines **Text** of `btn_background` in active state
+* **chevronColor1**: defaults to `ColorValue("#0C485A")`, determines the **Color** of the first Chevron in the gallery.
+* **chevronColor2**: defaults to `cmp_Light_SwipeRight.accentColor`, determines the **Color** of the second Chevron in the gallery.
+* **chevronColor3**: defaults to `ColorValue("#f5f5f5")`, determines the **Color** of the third Chevron in the gallery.
+* **icon**: defaults to `Icon.Heart`, determines the **Icon** of `icon_success`
+
+![swipe right component](assets/light%20components/SwipeRight.gif)
+
