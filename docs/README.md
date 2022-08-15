@@ -122,7 +122,7 @@ The TextInput control itself will adjust in its size to a resize of the componen
 ### Battery
 
 * **colorPalette**, defaults to `{color1:ColorValue("#0E566C"),color2:ColorValue("#168aad"),color3:ColorValue("#f5f5f5"),color4:ColorValue("#8a4f7d"),color5:ColorValue("#887880")}`, determines **Fill** of `btn_compartments` in conjunction with the **colorIntensity** property.
-* **colorIntensity**, defaults to 0.5, determines the percentage of **Fill** of `btn_compartments`
+* **colorIntensity**, defaults to `0.5`, determines the percentage of **Fill** of `btn_compartments`
 * **batteryContent**, defaults `{stage5:"Crisis",stage4:"Stressed",stage3:"Languishing",stage2:"Coping",stage1:"Well"}`, determines content of the `Gallery`
 * **rating** (Output property), returns the `sli_slide.Value`
 
@@ -151,7 +151,25 @@ The TextInput control itself will adjust in its size to a resize of the componen
 * **switchWidth** : **Width** of the `btn_bg`
 * **switchHeight** : **Height** of `btn_bg`
 * **backgroundFill**, defaults to `ColorFade(DarkGray, 60%)` of the `btn_bg`
-* **iconColor**, defaults to `ColorFade(DarkGray, 60%)`, determines **Fill** of `img_Moon` and `img_Sun`
+* **iconColor**, defaults to `ColorValue("#167aad")` , determines **Fill** of `img_Moon` and `img_Sun`
 * **rating** (Output property), returns the value of `sli_slide`
 
 ![toggle components](/docs/assets/light%20components/Toggles.gif)
+
+### progressbar
+
+* **barMaxValue**, defaults to `100`, determines the maximum value
+* **barCurrentValue**, defaults to `gbl_value`, which shall be used in the app to indicate the progress - in the gif its hooked to a `slider.Value`. Determines the **Width** of `btn_progress`
+* **barMaxFill**, defaults to `Transparent`, determines the **Fill** og the `btn_Total`
+* **barCurrentFill**, defaults to `ColorFade(DarkGray, 60%)`, determines the **Fill** of `btn_Current`
+* **barWidth**, defaults to `200`, determines the **Width** of the `btn_Total`
+* **BarHeight**, defaults to `42`, determines the **Height** of the `btn_Total`
+* **accentColor**, defaults to `ColorValue("#167aad")` , determines the **Color**of the `btn_barCurrent`
+
+
+### progress donut
+
+* **accentColor**: defaults to `ColorValue("#167aad")`, determines the **Fill** of the `CurrentCircle`
+* **primaryColor**: defaults to `"ColorFade(DarkGray, 60%)"`, determines the **Fill** of the `BackgroundCircle`
+* 
+![progress components](assets/light%20components/progress.gif)
