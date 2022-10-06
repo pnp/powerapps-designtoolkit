@@ -202,3 +202,12 @@ The component works with a hidden slider.
 
 ![swipe right component](assets/light%20components/SwipeRight.gif)
 
+### Datepicker Calendar
+
+* **accentColor**, defaults to `ColorValue("#167aad")`, determines the **Color** of `lbl_pickadate`, `icon_calendar` and `btn_top`also **Fill** of `Subcircle` and **HoverFill** of all Chevron icons
+* **primaryColor**: defaults to `ColorFade(DarkGray, 60%)`, determines the **Fill** of the calendar body
+* **secondaryColor**: defaults to `DarkGray`, determines *Fill** of header and footer of calendar
+* **textColor**: defaults to `Black`, determines the **Color** of all texts
+* **selectedDate** (Output property), returns the selected date
+
+![datepicker calendar component](assets/light%20components/DatePicker-Calendar.gif)

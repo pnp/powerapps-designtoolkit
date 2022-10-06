@@ -17,3 +17,8 @@ We collected information on our main design goals:
 - [accessibility](docs/accessibility.md)
 - [better coding practices](docs/better-coding-practices.md)
 - [design consistency](docs/design-consistency.md)
+
+## Overview of different component libraries
+
+- [light component library](light%20components)
+- [materialdesign component library](materialdesign%20components)
