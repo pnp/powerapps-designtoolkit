@@ -1,0 +1,92 @@
+cmp_MD_ContrastChecker As CanvasComponent:
+    backgroundColorHex: =defaults.backgroundColorHex
+    Fill: =ColorValue(cmp_MD_ContrastChecker.backGroundColor)
+    font: =defaults.font
+    fontSize: =defaults.fontSize
+    Height: =350
+    primaryColorHex: =defaults.primaryColorHex
+    textColor: =defaults.textColor
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    lbl_ValueColor1 As label:
+        Color: =cmp_MD_ContrastChecker.textColor
+        Font: =cmp_MD_ContrastChecker.font
+        Height: =70
+        Size: =14
+        Text: |-
+            =With({
+                primColorArray: AddColumns(Split(Right(Parent.primaryColorHex, 6), ""), "Value", Switch(Lower(Result), "a", 10, "b", 11, "c", 12, "d", 13, "e", 14, "f", 15, Value(Result))),
+               backColorArray: AddColumns(Split(Right(Parent.backgroundColorHex, 6), ""), "Value", Switch(Result, "a", 10, "b", 11, "c", 12, "d", 13, "e", 14, "f", 15, Value(Result)))},
+            Abs(Round( (299*(Index(primColorArray, 1).Value*16+Index(primColorArray, 2).Value)+587*(Index(primColorArray, 3).Value*16+Index(primColorArray, 4).Value)+114*(Index(primColorArray, 5).Value*16+Index(primColorArray, 6).Value))/1000
+            
+            -
+            (299*(Index(backColorArray, 1).Value*16+Index(backColorArray, 2).Value)+587*(Index(backColorArray, 3).Value*16+Index(backColorArray, 4).Value)+114*(Index(backColorArray, 5).Value*16+Index(backColorArray, 6).Value))/1000, 0))
+            
+            
+            )
+        Width: =560
+        X: =40
+        Y: =151
+        ZIndex: =1
+
+    Label7 As label:
+        AutoHeight: =true
+        Color: =ColorValue(cmp_MD_ContrastChecker.primaryColorHex)
+        Fill: =ColorValue(Parent.backgroundColorHex)
+        Font: =cmp_MD_ContrastChecker.font
+        Height: =70
+        Size: =cmp_MD_ContrastChecker.fontSize
+        Text: ="This is a sample text."
+        Width: =560
+        X: =40
+        Y: =25
+        ZIndex: =2
+
+    Label7_1 As label:
+        Color: =cmp_MD_ContrastChecker.textColor
+        Font: =cmp_MD_ContrastChecker.font
+        Height: =70
+        Size: =14
+        Text: ="Brightness difference (needs to be >125)"
+        Width: =560
+        X: =40
+        Y: =95
+        ZIndex: =3
+
+    lbl_ValueColor1_1 As label:
+        Color: =cmp_MD_ContrastChecker.textColor
+        Font: =cmp_MD_ContrastChecker.font
+        Height: =70
+        Size: =14
+        Text: |-
+            =With({
+                primColorArray: AddColumns(Split(Right(Parent.primaryColorHex, 6), ""), "Value", Switch(Lower(Result), "a", 10, "b", 11, "c", 12, "d", 13, "e", 14, "f", 15, Value(Result))),
+               backColorArray: AddColumns(Split(Right(Parent.backgroundColorHex, 6), ""), "Value", Switch(Result, "a", 10, "b", 11, "c", 12, "d", 13, "e", 14, "f", 15, Value(Result)))},
+            
+            Abs(
+            (Index(primColorArray, 1).Value*16+Index(primColorArray, 2).Value)-(Index(backColorArray, 1).Value*16+Index(backColorArray, 2).Value)
+            +(Index(primColorArray, 3).Value*16+Index(primColorArray, 4).Value)-(Index(backColorArray, 3).Value*16+Index(backColorArray, 4).Value)
+            +(Index(primColorArray, 5).Value*16+Index(primColorArray, 6).Value)-(Index(backColorArray, 5).Value*16+Index(backColorArray, 6).Value)
+            )
+            
+            
+            )
+        Width: =560
+        X: =40
+        Y: =266
+        ZIndex: =4
+
+    Label7_2 As label:
+        Color: =cmp_MD_ContrastChecker.textColor
+        Font: =cmp_MD_ContrastChecker.font
+        Height: =70
+        Size: =14
+        Text: ="Color difference (needs to be >500)"
+        Width: =560
+        X: =40
+        Y: =210
+        ZIndex: =5
+

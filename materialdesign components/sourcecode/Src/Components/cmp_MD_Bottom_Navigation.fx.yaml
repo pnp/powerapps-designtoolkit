@@ -1,0 +1,137 @@
+cmp_MD_Bottom_Navigation As CanvasComponent:
+    accentColor: |-
+        =ColorValue("#6200EE")
+    Fill: =RGBA(0, 0, 0, 0)
+    font: ="Roboto"
+    fontSize: =9
+    fontWeight: ="Normal"
+    Height: =56
+    iconColor: |-
+        ="#ffffff"
+    iconHoverColor: |-
+        ="#B07FF6"
+    iconSize: =24  
+    navContent: |-
+        =Table(
+            {
+                id: 1,
+                title: "Favorites",
+                image: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='" & cmp_MD_Bottom_Navigation.iconColor & "' d='M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z' />
+        </svg>"
+                ),
+                imageHover:         "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='"&cmp_MD_Bottom_Navigation.iconHoverColor &"' d='M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z' />
+        </svg>"
+                )
+            },
+            {
+                id: 2,
+                title: "Music",
+                image: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='" & cmp_MD_Bottom_Navigation.iconColor & "' d='M12 3V13.55C11.41 13.21 10.73 13 10 13C7.79 13 6 14.79 6 17S7.79 21 10 21 14 19.21 14 17V7H18V3H12Z' />
+        </svg>"
+                ), imageHover: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='" & cmp_MD_Bottom_Navigation.iconHoverColor & "' d='M12 3V13.55C11.41 13.21 10.73 13 10 13C7.79 13 6 14.79 6 17S7.79 21 10 21 14 19.21 14 17V7H18V3H12Z' />
+        </svg>"
+                )
+            },
+            {
+                id: 3,
+                title: "News",
+                image: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='" & cmp_MD_Bottom_Navigation.iconColor & "' d='M20 3H4C2.89 3 2 3.89 2 5V19C2 20.11 2.89 21 4 21H20C21.11 21 22 20.11 22 19V5C22 3.89 21.11 3 20 3M5 7H10V13H5V7M19 17H5V15H19V17M19 13H12V11H19V13M19 9H12V7H19V9Z' />
+        </svg>"
+                ),
+                imageHover: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='" & cmp_MD_Bottom_Navigation.iconHoverColor & "' d='M20 3H4C2.89 3 2 3.89 2 5V19C2 20.11 2.89 21 4 21H20C21.11 21 22 20.11 22 19V5C22 3.89 21.11 3 20 3M5 7H10V13H5V7M19 17H5V15H19V17M19 13H12V11H19V13M19 9H12V7H19V9Z' />
+        </svg>"
+                )
+            },
+            {
+                id: 4,
+                title: "Places",
+                image: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='" & cmp_MD_Bottom_Navigation.iconColor & "' d='M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z' />
+        </svg>"
+                ), 
+                imageHover: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='" & cmp_MD_Bottom_Navigation.iconHoverColor & "' d='M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z' />
+        </svg>"
+                )
+            },
+            {
+                id: 5,
+                title: "Movies",
+                image: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='" & cmp_MD_Bottom_Navigation.iconColor & "' d='M20.84 2.18L16.91 2.96L19.65 6.5L21.62 6.1L20.84 2.18M13.97 3.54L12 3.93L14.75 7.46L16.71 7.07L13.97 3.54M9.07 4.5L7.1 4.91L9.85 8.44L11.81 8.05L9.07 4.5M4.16 5.5L3.18 5.69A2 2 0 0 0 1.61 8.04L2 10L6.9 9.03L4.16 5.5M2 10V20C2 21.11 2.9 22 4 22H20C21.11 22 22 21.11 22 20V10H2Z' />
+        </svg>"
+                ),
+                imageHover: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='" & cmp_MD_Bottom_Navigation.iconHoverColor & "' d='M20.84 2.18L16.91 2.96L19.65 6.5L21.62 6.1L20.84 2.18M13.97 3.54L12 3.93L14.75 7.46L16.71 7.07L13.97 3.54M9.07 4.5L7.1 4.91L9.85 8.44L11.81 8.05L9.07 4.5M4.16 5.5L3.18 5.69A2 2 0 0 0 1.61 8.04L2 10L6.9 9.03L4.16 5.5M2 10V20C2 21.11 2.9 22 4 22H20C21.11 22 22 21.11 22 20V10H2Z' />
+        </svg>"
+                )
+            }
+        )
+    selectedItem: =gal_Nav.Selected.id
+    textColor: =White
+    Width: =App.DesignWidth
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    "gal_Nav As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver4.0'":
+        Fill: =cmp_MD_Bottom_Navigation.accentColor
+        Height: =56
+        Items: =cmp_MD_Bottom_Navigation.navContent
+        TemplatePadding: =0
+        TemplateSize: =Parent.Width/5
+        ZIndex: =1
+
+        img_icon_1 As image:
+            Height: =cmp_MD_Bottom_Navigation.iconSize
+            Image: =ThisItem.image
+            OnSelect: =Select(Parent)
+            Width: =cmp_MD_Bottom_Navigation.iconSize
+            X: =(Parent.TemplateWidth- Self.Width)/2
+            Y: =12
+            ZIndex: =1
+
+        lbl_navTitle As label:
+            Align: =Align.Center
+            Color: =If(ThisItem.IsSelected, cmp_MD_Bottom_Navigation.textColor, ColorFade(cmp_MD_Bottom_Navigation.accentColor, 50%))
+            Font: =cmp_MD_Bottom_Navigation.font
+            FontWeight: =cmp_MD_Bottom_Navigation.fontWeight
+            Height: =12
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =cmp_MD_Bottom_Navigation.fontSize
+            Text: =ThisItem.title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth
+            Y: =Parent.Height-Self.Height-6
+            ZIndex: =2
+
+        img_icon_selected As image:
+            Height: =cmp_MD_Bottom_Navigation.iconSize
+            Image: =ThisItem.imageHover
+            OnSelect: =Select(Parent)
+            Visible: =If(!ThisItem.IsSelected, true, false)
+            Width: =cmp_MD_Bottom_Navigation.iconSize
+            X: =img_icon_1.X
+            Y: =img_icon_1.Y
+            ZIndex: =3
+

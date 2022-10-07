@@ -1,0 +1,14 @@
+Calendar As screen:
+
+    cmp_MD_Calendar_1 As cmp_MD_Calendar:
+        ZIndex: =1
+
+    Label4 As label:
+        Height: =70
+        Size: =21
+        Text: =cmp_MD_Calendar_1.selectedDate
+        Width: =560
+        X: =27
+        Y: =987
+        ZIndex: =2
+

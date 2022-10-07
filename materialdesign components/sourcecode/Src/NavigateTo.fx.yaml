@@ -1,0 +1,118 @@
+NavigateTo As screen:
+    Fill: =defaults.elementBackgroundColor
+    Width: =1800
+
+    Rectangle2_1 As rectangle:
+        Fill: =defaults.primaryColor
+        Height: =70
+        Width: =Parent.Width
+        ZIndex: =1
+
+    cmp_MD_Button_7 As cmp_MD_Button:
+        boxShadow: =false
+        buttonText: =""
+        Height: =70
+        onSelect: |-
+            =UpdateContext({locExpandMenu: !locExpandMenu})
+        outsideMargin: =5
+        svgIcon: =LookUp(MaterialDesignIcons, name=If(locExpandMenu,"menu-open", "menu"), svgPath)
+        Width: =69
+        ZIndex: =2
+
+    Label8_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: ="Roboto"
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =18
+        Text: ="Navigation drawer"
+        Width: =560
+        X: =72
+        ZIndex: =3
+
+    Container2_1 As groupContainer.manualLayoutContainer:
+        Height: =545
+        Width: =492
+        X: =cmp_MD_Navigation_Drawer_3.Width+30
+        Y: =91
+        ZIndex: =4
+
+        Button1_1 As button:
+            BorderStyle: =BorderStyle.None
+            DisabledFill: =Self.Fill
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =defaults.backgroundColor
+            Height: =545
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =24
+            Text: =""
+            Width: =492
+            ZIndex: =1
+
+        cmp_MD_Button_8 As cmp_MD_Button:
+            borderRadius: |
+                =50
+            buttonText: ="DIFFERENT"
+            onSelect: |-
+                =UpdateContext({locLoading: !locLoading})
+            X: =75
+            Y: =48
+            ZIndex: =2
+
+        cmp_MD_Button_9 As cmp_MD_Button:
+            borderRadius: |
+                =50
+            buttonText: ="SCREEN"
+            outlinedButton: =true
+            X: =75
+            Y: =138
+            ZIndex: =3
+
+        cmp_MD_Checkbox_1 As cmp_MD_Checkbox:
+            X: =176
+            Y: =296
+            ZIndex: =4
+
+    html_sideMenuBoxShadow_1 As htmlViewer:
+        BorderStyle: =BorderStyle.Solid
+        Height: =5
+        HtmlText: |-
+            ="<div style='
+            width: "&Parent.Width&"px; 
+            height: 0px; 
+            box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.25);
+            border-radius: 0px
+            '>
+            </div>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =1800
+        Y: =70
+        ZIndex: =5
+
+    cmp_MD_Navigation_Drawer_3 As cmp_MD_Navigation_Drawer:
+        expandSidebar: =locExpandMenu
+        Height: =Parent.Height-Self.Y
+        items: =cmp_MD_Navigation_Drawer_2.items
+        onSelect: |
+            =Switch(
+                cmp_MD_Navigation_Drawer_3.selectedItem,
+                1, Notify("You pressed the menu item Documents"),
+                2, Notify("You pressed the menu item Calendar", Success),
+                3, Notify("Please stop pressing it gets depressing", NotificationType.Error),
+                UpdateContext({locExpandMenu: !locExpandMenu})
+            )
+        Y: =70
+        ZIndex: =6
+
+    cmp_MD_ProgressIndicator_2 As cmp_MD_ProgressIndicator:
+        transitionStart: =locLoading
+        Visible: =locLoading
+        Y: =69
+        ZIndex: =7
+

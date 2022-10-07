@@ -1,0 +1,246 @@
+cmp_MD_Textinput As CanvasComponent:
+    accentColor: |-
+        =ColorValue("#6200EE")
+    borderRadius: =5
+    errorColor: |-
+        =ColorValue("#dc143c")
+    errorIconColor: |-
+        ="#dc143c"
+    errorText: ="This not a valid "&cmp_MD_Textinput.inputFormat
+    Fill: =RGBA(0, 0, 0, 0)
+    fontSizeInput: =12  
+    fontSizeLabel: =9
+    fontWeightLabel: ="Text"
+    Height: =48+cmp_MD_Textinput.outsideMargin*2 +18
+    helperText: ="This is a hint"
+    iconSize: =24
+    inputFormat: ="URL"
+    labelFont: ="Roboto"
+    labelText: ="Text"
+    maxLength: =20
+    maxLengthVisible: =true
+    OnReset: =Set(isValidationError, false); Set(ResetText,false);Reset(txt_1)
+    outLined: =true
+    outsideMargin: =20
+    prefixText: ="$"
+    primaryColor: |-
+        =ColorValue("#a9a9a9")
+    primaryColorText: |-
+        ="#a9a9a9"
+    userText: ="Text"
+    Width: =300
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    txt_1 As text:
+        AccessibleLabel: =lbl_Title.Text
+        BorderColor: |-
+            =If(
+                !cmp_MD_Textinput.outLined,
+                Transparent,
+                If(
+                    isValidationError,
+                    cmp_MD_Textinput.errorColor,
+                    If(
+                        !IsBlank(txt_1.Text),
+                        cmp_MD_Textinput.accentColor,
+                        cmp_MD_Textinput.primaryColor
+                    )
+                )
+            )
+        Default: =""
+        Fill: =If(!cmp_MD_Textinput.outLined, ColorFade(cmp_MD_Textinput.primaryColor, 60%), Transparent)
+        FocusedBorderColor: =ColorFade(Self.BorderColor, -30%)
+        Font: ="Roboto"
+        Height: =48
+        HoverBorderColor: =Self.BorderColor
+        HoverFill: =Self.Fill
+        LineHeight: =1
+        MaxLength: =cmp_MD_Textinput.maxLength
+        Mode: =
+        OnChange: |-
+            =If(
+                !IsMatch(
+                    txt_1.Text,
+                    If(
+                        cmp_MD_Textinput.inputFormat = "decimal",
+                        "^(\d)+(\.)\d+$",
+                        cmp_MD_Textinput.inputFormat = "text",
+                        "^[a-zA-Z_-\s]*$",
+                        cmp_MD_Textinput.inputFormat = "number greater than 0", 
+                        "\d+" ,
+                        cmp_MD_Textinput.inputFormat = "URL",
+                        "(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$",
+                        cmp_MD_Textinput.inputFormat = "Email",
+                        "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$",
+                        cmp_MD_Textinput.inputFormat = "password",
+                        "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8\16,}$"
+                        
+                    )
+                ),
+                Set(
+                    ResetText,
+                    false
+                );
+                Set(
+                    ResetText,
+                    true
+                );
+                Set(
+                    isValidationError,
+                    true
+                ),
+                Set(
+                    ResetText,
+                    false
+                )
+            );
+            If(
+                IsBlank(Self.Text),
+                Reset(cmp_MD_Textinput)
+            )
+        PaddingLeft: =If(IsBlank(lbl_prefix.Text),16, 40)
+        PaddingTop: =20
+        RadiusBottomLeft: =If(cmp_MD_Textinput.outLined,cmp_MD_Textinput.borderRadius, 0)
+        RadiusBottomRight: =If(cmp_MD_Textinput.outLined,cmp_MD_Textinput.borderRadius, 0)
+        RadiusTopLeft: =cmp_MD_Textinput.borderRadius
+        RadiusTopRight: =cmp_MD_Textinput.borderRadius
+        Size: =cmp_MD_Textinput.fontSizeInput
+        Width: =cmp_MD_Textinput.Width-2*cmp_MD_Textinput.outsideMargin
+        X: =cmp_MD_Textinput.outsideMargin
+        Y: =cmp_MD_Textinput.outsideMargin
+        ZIndex: =1
+
+    rect_Underline As rectangle:
+        Fill: |-
+            =If(
+                isValidationError,
+                cmp_MD_Textinput.errorColor,
+                If(
+                    !IsBlank(txt_1.Text),
+                    cmp_MD_Textinput.accentColor,
+                    cmp_MD_Textinput.primaryColor
+                )
+            )
+        Height: =If(isValidationError, 1, 2)
+        Visible: =!cmp_MD_Textinput.outLined
+        Width: =txt_1.Width
+        X: =txt_1.X
+        Y: =txt_1.Y + txt_1.Height-Self.Height
+        ZIndex: =2
+
+    lbl_Title As label:
+        Color: =cmp_MD_Textinput.accentColor
+        Fill: =If(cmp_MD_Textinput.outLined, App.ActiveScreen.Fill, Transparent)
+        Font: =cmp_MD_Textinput.labelFont
+        FontWeight: =cmp_MD_Textinput.fontWeightLabel
+        Height: =20
+        LineHeight: =1
+        PaddingBottom: =8
+        PaddingLeft: =If(!cmp_MD_Textinput.outLined , 16, 4)
+        PaddingRight: =4
+        PaddingTop: =8
+        Size: =cmp_MD_Textinput.fontSizeLabel
+        Text: =cmp_MD_Textinput.labelText
+        VerticalAlign: =VerticalAlign.Bottom
+        Width: =If(cmp_MD_Textinput.outLined, 8*Len(Self.Text), txt_1.Width)
+        X: =If(!cmp_MD_Textinput.outLined, txt_1.X, txt_1.X+16)
+        Y: =If(!cmp_MD_Textinput.outLined, txt_1.Y, txt_1.Y-(Self.PaddingTop+Self.PaddingBottom)/2)
+        ZIndex: =3
+
+    lbl_error As label:
+        AutoHeight: =true
+        Color: =cmp_MD_Textinput.errorColor
+        Font: =cmp_MD_Textinput.labelFont
+        FontWeight: =cmp_MD_Textinput.fontWeightLabel
+        Height: =18
+        PaddingLeft: =16
+        Size: =cmp_MD_Textinput.fontSizeLabel
+        Text: =cmp_MD_Textinput.errorText
+        VerticalAlign: =VerticalAlign.Top
+        Visible: =isValidationError
+        Width: =If(cmp_MD_Textinput.maxLengthVisible, 200, txt_1.Width)
+        X: =txt_1.X
+        Y: =rect_Underline.Y + rect_Underline.Height
+        ZIndex: =4
+
+    img_trailingIcon As image:
+        Height: =Self.Width
+        Image: |-
+            =If(
+                isValidationError,
+                "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+               <path fill='" & cmp_MD_Textinput.errorIconColor & "' d='M13,13H11V7H13M13,17H11V15H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z' />
+            </svg>"
+                ),
+                If(
+                    !IsBlank(txt_1.Text),
+                    "data:image/svg+xml;utf8, " & EncodeUrl(
+                        "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+               <path fill='" & cmp_MD_Textinput.primaryColorText & "' d='M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z' />
+            </svg>"
+                    )
+                )
+            )   
+        OnSelect: =Reset(cmp_MD_Textinput)
+        Width: =cmp_MD_Textinput.iconSize
+        X: =txt_1.X+txt_1.Width-Self.Width-12
+        Y: =txt_1.Y+ (txt_1.Height - Self.Height)/2
+        ZIndex: =5
+
+    lbl_remainingChars As label:
+        Align: =Align.Right
+        AutoHeight: =true
+        Color: |-
+            =If (
+                Len(txt_1.Text) > (cmp_MD_Textinput.maxLength - 10),
+                cmp_MD_Textinput.errorColor,
+                cmp_MD_Textinput.primaryColor
+            )
+        Font: =cmp_MD_Textinput.labelFont
+        FontWeight: =cmp_MD_Textinput.fontWeightLabel
+        Height: =18
+        Size: =cmp_MD_Textinput.fontSizeLabel
+        Text: =Len(txt_1.Text) & " / " & cmp_MD_Textinput.maxLength
+        VerticalAlign: =VerticalAlign.Top
+        Visible: =If (cmp_MD_Textinput.maxLengthVisible, !isValidationError, false)
+        Width: =100
+        X: =txt_1.Y+txt_1.Width-Self.Width
+        Y: =lbl_helper.Y
+        ZIndex: =8
+
+    lbl_helper As label:
+        AutoHeight: =true
+        Color: =cmp_MD_Textinput.primaryColor
+        Font: =cmp_MD_Textinput.labelFont
+        FontWeight: =cmp_MD_Textinput.fontWeightLabel
+        Height: =18
+        PaddingLeft: =16
+        Size: =cmp_MD_Textinput.fontSizeLabel
+        Text: =cmp_MD_Textinput.helperText
+        VerticalAlign: =VerticalAlign.Top
+        Visible: =!isValidationError
+        Width: =If(cmp_MD_Textinput.maxLengthVisible, 200, txt_1.Width)
+        X: =txt_1.X
+        Y: =rect_Underline.Y + rect_Underline.Height
+        ZIndex: =9
+
+    lbl_prefix As label:
+        Color: =cmp_MD_Textinput.primaryColor
+        Font: =cmp_MD_Textinput.labelFont
+        FontWeight: =cmp_MD_Textinput.fontWeightLabel
+        Height: =txt_1.Height
+        PaddingBottom: =txt_1.PaddingBottom
+        PaddingLeft: =16
+        PaddingRight: =txt_1.PaddingRight
+        PaddingTop: =txt_1.PaddingTop
+        Size: =cmp_MD_Textinput.fontSizeInput
+        Text: =cmp_MD_Textinput.prefixText
+        VerticalAlign: =VerticalAlign.Bottom
+        Width: =txt_1.PaddingLeft + 10
+        X: =txt_1.X
+        Y: =18
+        ZIndex: =10
+

@@ -1,0 +1,86 @@
+cmp_MD_Toggle As CanvasComponent:
+    backgroundColor: =defaults.backgroundColor
+    elementBackgroundColor: =defaults.elementBackgroundColor
+    Fill: =Transparent
+    Height: =cmp_MD_Toggle.outsideMargin*2 + cmp_MD_Toggle.toggleSize
+    lineSize: =32
+    OnReset: =
+    outsideMargin: =20
+    primaryColor: =defaults.primaryColor
+    primaryColorTransparentHex: =defaults.primaryColorTransparentHex
+    toggleSize: =20  
+    value: =isCheck
+    Width: =cmp_MD_Toggle.outsideMargin*2 + cmp_MD_Toggle.lineSize
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    HtmlText1_2 As htmlViewer:
+        Height: =41
+        HtmlText: |-
+            ="<div style='
+            margin: 5px;
+            width: "& Circle1.Width&"px; 
+            height: "& Circle1.Height&"px; 
+            box-shadow: 0.5px 0.5px 2px 0px rgba(0,0,0,0.5); 
+            border-radius: 10px
+            '>
+            </div>"
+        PaddingLeft: =0
+        PaddingRight: =0
+        Width: =35
+        X: =Circle1.X-5
+        Y: =Circle1.Y-10
+        ZIndex: =1
+
+    btn_line As button:
+        BorderColor: |-
+            =ColorValue("#6200EE4d")
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Fill: =If(!isCheck, cmp_MD_Toggle.elementBackgroundColor, ColorValue(cmp_MD_Toggle.primaryColorTransparentHex))
+        Height: =12
+        HoverBorderColor: =Transparent
+        HoverFill: =Self.Fill
+        OnSelect: =Set(isCheck, !isCheck)
+        PaddingLeft: =0
+        PaddingRight: =0
+        PressedBorderColor: =Transparent
+        PressedFill: =Self.Fill
+        RadiusBottomLeft: =32
+        RadiusBottomRight: =32
+        RadiusTopLeft: =32
+        RadiusTopRight: =32
+        Size: =24
+        Text: =""
+        Width: =32
+        X: =cmp_MD_Toggle.outsideMargin+2
+        Y: =Circle1.Y + (Circle1.Height-Self.Height)/2
+        ZIndex: =2
+
+    Circle1 As circle:
+        Fill: =If(isCheck, cmp_MD_Toggle.primaryColor, cmp_MD_Toggle.backgroundColor)
+        Height: =cmp_MD_Toggle.toggleSize
+        HoverFill: =ColorValue(cmp_MD_Toggle.primaryColorTransparentHex)
+        Width: =cmp_MD_Toggle.toggleSize
+        X: =If(!isCheck, cmp_MD_Toggle.outsideMargin, cmp_MD_Toggle.outsideMargin+ btn_line.Width+5-Self.Width)
+        Y: =cmp_MD_Toggle.outsideMargin
+        ZIndex: =3
+
+    btn_hover_1 As button:
+        Fill: =Transparent
+        Height: =24
+        HoverFill: =ColorValue(cmp_MD_Toggle.primaryColorTransparentHex)
+        OnSelect: =Set(isCheck, !isCheck)
+        PressedFill: =Self.Fill
+        RadiusBottomLeft: =32
+        RadiusBottomRight: =32
+        RadiusTopLeft: =32
+        RadiusTopRight: =32
+        Size: =24
+        Text: =""
+        Width: =24
+        X: =Circle1.X-2   
+        Y: =Circle1.Y-2
+        ZIndex: =4
+

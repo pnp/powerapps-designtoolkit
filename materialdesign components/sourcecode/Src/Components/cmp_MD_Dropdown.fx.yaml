@@ -1,0 +1,263 @@
+cmp_MD_Dropdown As CanvasComponent:
+    borderRadius: =5
+    checkAll: =true
+    dropdownContent: |-
+        =Table({id:1, item: "quick brown fox"}, {id:2, item: "lazy dog"}, {id:3, item: "zombies arrive"}, {id:4, item: "judge Pat"})
+    Fill: =RGBA(0, 0, 0, 0)
+    fontSizeInput: =12  
+    fontSizeLabel: =9
+    fontWeightLabel: ="Text"
+    Height: =48+cmp_MD_Dropdown.outsideMargin*2 +18+140
+    iconSize: =24
+    labelFont: ="Roboto"
+    labelText: ="Text"
+    multiselect: =true
+    OnReset: =Set(isValidationError, false); Set(ResetText,false);Reset(txt_4); Set(showGallery, !showGallery)
+    outLined: =false
+    outsideMargin: =20
+    primaryColor: |-
+        =ColorValue("#6200EE")
+    primaryColorText: |-
+        ="#6200EE"
+    secondaryColor: |-
+        =ColorValue("#a9a9a9")
+    secondaryColorText: |-
+        ="#a9a9a9"
+    selectedItem: =If(cmp_MD_Dropdown.multiselect, Concat(colItems, item, ", "), Gallery3_2.Selected.item)
+    textColor: =Black
+    Width: =300
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    "Gallery3_2 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+        Height: =CountRows(Gallery3_2.AllItems)*Gallery3_2.TemplateHeight
+        Items: =cmp_MD_Dropdown.dropdownContent
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =32  
+        Visible: =showGallery
+        Width: =txt_4.Width
+        X: =txt_4.X
+        Y: =If(cmp_MD_Dropdown.checkAll, Checkbox3_2.Y + Checkbox3_1.Height, rect_Underline_3.Y+ rect_Underline_3.Height)
+        ZIndex: =2
+
+        img_full_1 As image:
+            Height: =cmp_MD_Dropdown.iconSize
+            Image: |-
+                ="data:image/svg+xml;utf8, " & EncodeUrl(
+                            "
+                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+                   <path fill='"&cmp_MD_Dropdown.primaryColorText&"' d='M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z' />
+                </svg>
+                ")
+            OnSelect: =Select(Parent)
+            Visible: =If(cmp_MD_Dropdown.multiselect, If(Checkbox3_1.Value=false, false, true), false)
+            Width: =cmp_MD_Dropdown.iconSize
+            Y: =(Parent.TemplateHeight - Self.Height )/2
+            ZIndex: =2
+
+        img_empty_1 As image:
+            Height: =cmp_MD_Dropdown.iconSize
+            Image: |-
+                ="data:image/svg+xml;utf8, " & EncodeUrl(
+                            "
+                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+                   <path fill='"&cmp_MD_Dropdown.secondaryColorText&"' d='M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,5V19H5V5H19Z' />
+                </svg>
+                "
+                        )
+            OnSelect: =Select(Parent)
+            Visible: =If(cmp_MD_Dropdown.multiselect, If(Checkbox3_1.Value=true, false, true), false)
+            Width: =cmp_MD_Dropdown.iconSize
+            Y: =(Parent.TemplateHeight - Self.Height )/2
+            ZIndex: =3
+
+        Checkbox3_1 As checkbox:
+            CheckboxSize: =0
+            Default: =isAllChecked
+            Font: =cmp_MD_Dropdown.labelFont
+            FontWeight: =cmp_MD_Dropdown.fontWeightLabel
+            Height: =32
+            OnCheck: |-
+                =Collect(colItems, {item:ThisItem.item})
+            OnSelect: =Select(Parent)
+            OnUncheck: |-
+                =Remove(colItems, {item:ThisItem.item});
+            PaddingLeft: =24
+            Size: =cmp_MD_Dropdown.fontSizeLabel
+            Text: =ThisItem.item
+            Visible: =If(cmp_MD_Dropdown.multiselect, true, false)
+            Width: =260
+            ZIndex: =4
+
+        Button3_1 As button:
+            Align: =Align.Left
+            Color: =cmp_MD_Dropdown.textColor
+            Fill: =Transparent
+            Font: =cmp_MD_Dropdown.labelFont
+            FontWeight: =cmp_MD_Dropdown.fontWeightLabel
+            Height: =Parent.TemplateHeight
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(cmp_MD_Dropdown.secondaryColor, 60%)
+            OnSelect: =Set(showGallery, !showGallery)
+            PaddingLeft: =16
+            PressedBorderColor: =Transparent
+            PressedColor: =Self.Color
+            PressedFill: =cmp_MD_Dropdown.secondaryColor
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0   
+            RadiusTopLeft: =0   
+            RadiusTopRight: =0
+            Size: =cmp_MD_Dropdown.fontSizeLabel
+            Text: =ThisItem.item
+            Visible: =If(cmp_MD_Dropdown.multiselect, false, true)
+            Width: =260
+            ZIndex: =5
+
+    txt_4 As text:
+        AccessibleLabel: =lbl_Title_4.Text
+        BorderColor: |
+            =If(
+                !cmp_MD_Dropdown.outLined,
+                Transparent,
+            
+                    If(
+                        !IsBlank(txt_4.Text),
+                        cmp_MD_Dropdown.primaryColor,
+                        cmp_MD_Dropdown.secondaryColor
+                    )
+                )
+        Default: =If(cmp_MD_Dropdown.multiselect, Concat(colItems, item, ", "), Gallery3_2.Selected.item)
+        Fill: =If(!cmp_MD_Dropdown.outLined, ColorFade(cmp_MD_Dropdown.secondaryColor, 60%), Transparent)
+        FocusedBorderColor: =ColorFade(Self.BorderColor, -30%)
+        Font: ="Roboto"
+        Height: =48
+        HoverBorderColor: =Self.BorderColor
+        HoverFill: =Self.Fill
+        LineHeight: =1
+        MaxLength: =1000
+        Mode: =
+        OnChange: =
+        PaddingLeft: =16
+        PaddingTop: =20
+        RadiusBottomLeft: =If(cmp_MD_Dropdown.outLined,cmp_MD_Dropdown.borderRadius, 0)
+        RadiusBottomRight: =If(cmp_MD_Dropdown.outLined,cmp_MD_Dropdown.borderRadius, 0)
+        RadiusTopLeft: =cmp_MD_Dropdown.borderRadius
+        RadiusTopRight: =cmp_MD_Dropdown.borderRadius
+        Size: =cmp_MD_Dropdown.fontSizeInput
+        Width: =cmp_MD_Dropdown.Width-2*cmp_MD_Dropdown.outsideMargin
+        X: =cmp_MD_Dropdown.outsideMargin
+        Y: =cmp_MD_Dropdown.outsideMargin
+        ZIndex: =3
+
+    rect_Underline_3 As rectangle:
+        Fill: |-
+            =If(
+                !IsBlank(txt_4.Text),
+                cmp_MD_Dropdown.primaryColor,
+                cmp_MD_Dropdown.secondaryColor
+            )
+        Height: =If(isValidationError, 1, 2)
+        Visible: =!cmp_MD_Dropdown.outLined
+        Width: =txt_4.Width
+        X: =txt_4.X
+        Y: =txt_4.Y + txt_4.Height-Self.Height
+        ZIndex: =4
+
+    lbl_Title_4 As label:
+        Color: =cmp_MD_Dropdown.primaryColor
+        Fill: =If(cmp_MD_Dropdown.outLined, App.ActiveScreen.Fill, Transparent)
+        Font: =cmp_MD_Dropdown.labelFont
+        FontWeight: =cmp_MD_Dropdown.fontWeightLabel
+        Height: =20
+        LineHeight: =1
+        PaddingBottom: =8
+        PaddingLeft: =If(!cmp_MD_Dropdown.outLined , 16, 4)
+        PaddingRight: =4
+        PaddingTop: =8
+        Size: =cmp_MD_Dropdown.fontSizeLabel
+        Text: =cmp_MD_Dropdown.labelText
+        Width: =If(cmp_MD_Dropdown.outLined, 8*Len(Self.Text), txt_4.Width)
+        X: =If(!cmp_MD_Dropdown.outLined, txt_4.X, txt_4.X+16)
+        Y: =If(!cmp_MD_Dropdown.outLined, txt_4.Y, txt_4.Y-(Self.PaddingTop+Self.PaddingBottom)/2)
+        ZIndex: =5
+
+    img_chevron_2 As image:
+        Height: =Self.Width
+        Image: |-
+            =If(
+                !showGallery,
+                "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+               <path fill='" & cmp_MD_Dropdown.secondaryColorText & "' d='M7,10L12,15L17,10H7Z' />
+            </svg>"
+                ),
+                "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+               <path fill='" & cmp_MD_Dropdown.secondaryColorText & "' d='M7,15L12,10L17,15H7Z' />
+            </svg>"
+                )
+            )
+        OnSelect: =Set(showGallery, !showGallery)
+        Width: =cmp_MD_Dropdown.iconSize
+        X: =txt_4.X+txt_4.Width-Self.Width-12
+        Y: =txt_4.Y+ (txt_4.Height - Self.Height)/2
+        ZIndex: =6
+
+    img_full_2 As image:
+        Height: =cmp_MD_Dropdown.iconSize
+        Image: |-
+            ="data:image/svg+xml;utf8, " & EncodeUrl(
+                        "
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+               <path fill='"&cmp_MD_Dropdown.primaryColorText&"' d='M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z' />
+            </svg>
+            ")
+        OnSelect: =
+        Visible: =If(cmp_MD_Dropdown.checkAll&& cmp_MD_Dropdown.multiselect&& showGallery, Checkbox3_2.Value, false)
+        Width: =cmp_MD_Dropdown.iconSize
+        X: =txt_4.X
+        Y: =82
+        ZIndex: =7
+
+    img_empty_2 As image:
+        Height: =cmp_MD_Dropdown.iconSize
+        Image: |-
+            ="data:image/svg+xml;utf8, " & EncodeUrl(
+                        "
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+               <path fill='"&cmp_MD_Dropdown.secondaryColorText&"' d='M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,5V19H5V5H19Z' />
+            </svg>
+            "
+                    )
+        OnSelect: =
+        Visible: =cmp_MD_Dropdown.checkAll && cmp_MD_Dropdown.multiselect&& showGallery&& !Checkbox3_2.Value
+        Width: =cmp_MD_Dropdown.iconSize
+        X: =txt_4.X
+        Y: =82
+        ZIndex: =8
+
+    Checkbox3_2 As checkbox:
+        CheckboxSize: =0
+        Color: =cmp_MD_Dropdown.primaryColor
+        Default: =If(CountRows(colItems)=0, true,  false)
+        Font: =cmp_MD_Dropdown.labelFont
+        FontWeight: =Normal
+        Height: =32
+        HoverBorderColor: =Self.BorderColor
+        HoverColor: =Self.Color
+        OnCheck: |-
+            =Set(isAllChecked, !isAllChecked); ForAll(Gallery3_2.AllItems, Collect(colItems,  {item:Checkbox3_1.Text}))
+        OnSelect: =
+        OnUncheck: =Set(isAllChecked, false); Clear(colItems); 
+        PaddingLeft: =24
+        PressedBorderColor: =Self.BorderColor
+        Size: =cmp_MD_Dropdown.fontSizeLabel
+        Text: =If(Self.Value = true, "UNCHECK ALL", "CHECK ALL")
+        Visible: =cmp_MD_Dropdown.multiselect && showGallery && cmp_MD_Dropdown.checkAll
+        Width: =260
+        X: =txt_4.X
+        Y: =rect_Underline_3.Y+rect_Underline_3.Height+10
+        ZIndex: =9
+

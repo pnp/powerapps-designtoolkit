@@ -1,0 +1,16 @@
+ContrastChecker As screen:
+
+    cmp_MD_ContrastChecker_1 As cmp_MD_ContrastChecker:
+        backgroundColorHex: =varBackgroundColorHex
+        Fill: =ColorValue(cmp_MD_ContrastChecker_1.backGroundColor)
+        Height: =480
+        primaryColorHex: =varPrimaryColorHex
+        Y: =42
+
+    cmp_MD_ContrastChecker_2 As cmp_MD_ContrastChecker:
+        backgroundColorHex: =defaults.elementBackgroundColorHex
+        Fill: =ColorValue(cmp_MD_ContrastChecker_2.backGroundColor)
+        Height: =480
+        Y: =576
+        ZIndex: =2
+

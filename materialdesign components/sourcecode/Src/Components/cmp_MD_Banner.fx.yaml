@@ -1,0 +1,185 @@
+cmp_MD_Banner As CanvasComponent:
+    action1OnSelect: =true
+    action1Text: ="CLOSE"
+    action2OnSelect: =true
+    action2Text: ="RETRY"
+    actionBeneath: =false
+    backgroundColor: =defaults.backgroundColor
+    backgroundColorHex: =defaults.backgroundColorHex
+    boxShadow: =true
+    Fill: =Transparent
+    font: =defaults.font
+    fontSize: =20
+    fontWeight: =FontWeight.Normal
+    Height: |-
+        =If(cmp_MD_Banner.actionBeneath,
+        150, 100)
+    onHide: =true
+    OnReset: =
+    primaryColor: =defaults.primaryColor
+    svgIcon: |-
+        ="<svg xmlns=""http://www.w3.org/2000/svg"" height=""48"" width=""48""><path d=""m19.4 44-1-6.3q-.95-.35-2-.95t-1.85-1.25l-5.9 2.7L4 30l5.4-3.95q-.1-.45-.125-1.025Q9.25 24.45 9.25 24q0-.45.025-1.025T9.4 21.95L4 18l4.65-8.2 5.9 2.7q.8-.65 1.85-1.25t2-.9l1-6.35h9.2l1 6.3q.95.35 2.025.925Q32.7 11.8 33.45 12.5l5.9-2.7L44 18l-5.4 3.85q.1.5.125 1.075.025.575.025 1.075t-.025 1.05q-.025.55-.125 1.05L44 30l-4.65 8.2-5.9-2.7q-.8.65-1.825 1.275-1.025.625-2.025.925l-1 6.3ZM24 30.5q2.7 0 4.6-1.9 1.9-1.9 1.9-4.6 0-2.7-1.9-4.6-1.9-1.9-4.6-1.9-2.7 0-4.6 1.9-1.9 1.9-1.9 4.6 0 2.7 1.9 4.6 1.9 1.9 4.6 1.9Zm0-3q-1.45 0-2.475-1.025Q20.5 25.45 20.5 24q0-1.45 1.025-2.475Q22.55 20.5 24 20.5q1.45 0 2.475 1.025Q27.5 22.55 27.5 24q0 1.45-1.025 2.475Q25.45 27.5 24 27.5Zm0-3.5Zm-2.2 17h4.4l.7-5.6q1.65-.4 3.125-1.25T32.7 32.1l5.3 2.3 2-3.6-4.7-3.45q.2-.85.325-1.675.125-.825.125-1.675 0-.85-.1-1.675-.1-.825-.35-1.675L40 17.2l-2-3.6-5.3 2.3q-1.15-1.3-2.6-2.175-1.45-.875-3.2-1.125L26.2 7h-4.4l-.7 5.6q-1.7.35-3.175 1.2-1.475.85-2.625 2.1L10 13.6l-2 3.6 4.7 3.45q-.2.85-.325 1.675-.125.825-.125 1.675 0 .85.125 1.675.125.825.325 1.675L8 30.8l2 3.6 5.3-2.3q1.2 1.2 2.675 2.05Q19.45 35 21.1 35.4Z""/></svg>"
+    text: ="Ooops, that didn't work"
+    textColor: =defaults.textColor
+    textPaddingLeft: =20
+    timerStart: =true
+    transitionAnimation: =true
+    transitionTime: =200
+    twoButtons: =true
+    Visible: =true
+    Width: =600
+    X: =0
+    Y: =0
+    yPosition: =(tim_bannerTransition.Value/cmp_MD_Banner.transitionTime-1)*Self.Height
+    ZIndex: =1
+
+    tim_bannerTransition As timer:
+        Duration: =cmp_MD_Banner.transitionTime
+        OnTimerEnd: =cmp_MD_Banner.onHide()
+        Reset: =!cmp_MD_Banner.timerStart
+        Start: =cmp_MD_Banner.timerStart
+        Visible: =false
+        X: =60
+        Y: =50
+        ZIndex: =2
+
+    con_Banner As groupContainer.manualLayoutContainer:
+        Fill: =Transparent
+        Height: =Parent.Height
+        Width: =Parent.Width
+        Y: |-
+            =If(
+                cmp_MD_Banner.transitionAnimation,
+                (tim_bannerTransition.Value/cmp_MD_Banner.transitionTime-1)*Self.Height,
+                0
+                )
+        ZIndex: =4
+
+        rec_bannerBG As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =cmp_MD_Banner.backgroundColor
+            Height: =Parent.Height-4
+            Width: =Parent.Width
+            ZIndex: =1
+
+        html_bannerBoxshadow As htmlViewer:
+            Fill: =Transparent
+            Height: =cmp_MD_Banner.Height
+            HtmlText: |-
+                ="<div 
+                    style='
+                        position: absolute;
+                        width: "&Parent.Width&"px;
+                        height: "&cmp_MD_Banner.Height-2&"px;     
+                        box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.25);
+                        '
+                >
+                
+                </div>
+                
+                "
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =cmp_MD_Banner.Width
+            ZIndex: =2
+
+        lbl_bannerText As label:
+            AutoHeight: =true
+            Color: =cmp_MD_Banner.textColor
+            Height: =70
+            PaddingLeft: =20
+            Size: =cmp_MD_Banner.fontSize
+            Text: =cmp_MD_Banner.text
+            Width: |-
+                =If(
+                    cmp_MD_Banner.actionBeneath, Parent.Width-Self.X-8,
+                    cmp_MD_Banner.twoButtons, Parent.Width-btn_action2.X-img_bannerIcon.X-img_bannerIcon.Width-8,
+                    btn_action1.X-Self.X-8)
+            X: =cir_iconBG.X+If(Len(cmp_MD_Banner.svgIcon)>0,cir_iconBG.Width, 0)
+            Y: =20
+            ZIndex: =3
+
+        cir_iconBG As circle:
+            DisplayMode: =DisplayMode.View
+            Fill: =cmp_MD_Banner.primaryColor
+            Height: =50
+            Visible: =img_bannerIcon.Visible
+            Width: =50
+            X: =cmp_MD_Banner.textPaddingLeft
+            Y: =20
+            ZIndex: =4
+
+        img_bannerIcon As image:
+            DisplayMode: =DisplayMode.View
+            Fill: =
+            Height: =40
+            Image: |-
+                =
+                "data:image/svg+xml;utf8, " & EncodeUrl(
+                //Set Map svg text
+                
+                 Substitute(cmp_MD_Banner.svgIcon, "<svg ", "<svg fill='"&cmp_MD_Banner.backgroundColorHex&"' "
+                )
+                )
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            RadiusBottomLeft: =25
+            RadiusBottomRight: =25
+            RadiusTopLeft: =25
+            RadiusTopRight: =25
+            Visible: =Len(cmp_MD_Banner.svgIcon)>0
+            Width: =40
+            X: =cmp_MD_Banner.textPaddingLeft+5
+            Y: =25
+            ZIndex: =5
+
+        btn_action1 As button:
+            BorderStyle: =BorderStyle.None
+            Color: =cmp_MD_Banner.primaryColor
+            DisabledFill: =Transparent
+            Fill: =Transparent
+            Font: =cmp_MD_Banner.font
+            FontWeight: =cmp_MD_Banner.fontWeight
+            Height: =50
+            HoverColor: =ColorFade(Self.Color, 30%)
+            HoverFill: =Transparent
+            OnSelect: =cmp_MD_Banner.action1OnSelect()
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            PressedFill: =Transparent
+            Size: =cmp_MD_Banner.fontSize
+            Text: =cmp_MD_Banner.action1Text
+            Width: =Len(Self.Text)*Self.Size*0.9+20
+            X: =con_Banner.Width-Self.Width-8
+            Y: =If(cmp_MD_Banner.actionBeneath, Parent.Height-Self.Height-5, 20)
+            ZIndex: =6
+
+        btn_action2 As button:
+            BorderStyle: =BorderStyle.None
+            Color: =cmp_MD_Banner.primaryColor
+            DisabledFill: =Transparent
+            Fill: =Transparent
+            Font: =cmp_MD_Banner.font
+            FontWeight: =cmp_MD_Banner.fontWeight
+            Height: =50
+            HoverColor: =ColorFade(Self.Color, 30%)
+            HoverFill: =Transparent
+            OnSelect: =cmp_MD_Banner.action2OnSelect()
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            PressedFill: =Transparent
+            Size: =cmp_MD_Banner.fontSize
+            Text: =cmp_MD_Banner.action2Text
+            Width: =Len(Self.Text)*Self.Size*0.9+20
+            X: =btn_action1.X-Self.Width-8
+            Y: =If(cmp_MD_Banner.actionBeneath, Parent.Height-Self.Height-5, 20)
+            ZIndex: =7
+

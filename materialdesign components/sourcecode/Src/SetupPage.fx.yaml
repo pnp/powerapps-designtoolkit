@@ -1,0 +1,168 @@
+SetupPage As screen:
+    Height: =1000
+    OnVisible: |-
+        =Set(defaults,
+            {
+                primaryColor: ColorValue("#6200EE"),
+                secondaryColor: ColorValue("#03DAC6"),
+                disabledColor: Gray,
+                backgroundColor: White,
+                elementBackgroundColor: RGBA(240, 240, 240, 1),
+                textColor: RGBA(0, 0, 0, 1),
+                errorColor: ColorValue("#B00020"),
+                font: "Roboto, 'Segoe UI'",
+                fontSize: 14,
+                borderRadius: 15
+            }
+        );
+        
+        Set(defaults,
+            Patch(defaults,
+            {
+                primaryColorHex: Match(JSON(defaults.primaryColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                primaryColorTransparentHex: Match(JSON(defaults.primaryColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch&"4d",
+                secondaryColorHex: Match(JSON(defaults.secondaryColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                disabledColorHex: Match(JSON(defaults.disabledColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                backgroundColorHex: Match(JSON(defaults.backgroundColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                errorColorHex: Match(JSON(defaults.errorColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                elementBackgroundColorHex: Match(JSON(defaults.elementBackgroundColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch
+            }
+            )
+        );
+    Width: =1000
+
+    cmp_MD_Button_1 As cmp_MD_Button:
+        buttonText: ="DIALOG"
+        Height: =93
+        onSelect: |-
+            =UpdateContext({locDialog: true});
+            Reset(cmp_MD_Dialog_1)
+        outlinedButton: =true
+        Width: =333
+        X: =300
+        Y: =110
+
+    Toggle2 As toggleSwitch:
+        FalseText: ="24hour-Format"
+        Height: =47
+        Size: =21
+        TrueText: ="12hour-Format"
+        Visible: =locTimePicker
+        Width: =348
+        X: =297
+        Y: =919
+        ZIndex: =2
+
+    cmp_MD_Button_2 As cmp_MD_Button:
+        buttonText: ="NOW"
+        Height: =87
+        onSelect: |-
+            =UpdateContext({locDefaultTime: Now()})
+        outlinedButton: =true
+        svgIcon: |-
+            ="<svg xmlns=""http://www.w3.org/2000/svg"" height=""48"" width=""48""><path d=""M24.15 42q-3.75 0-7.05-1.425T11.325 36.7q-2.475-2.45-3.9-5.75Q6 27.65 6 23.9t1.425-7q1.425-3.25 3.9-5.675Q13.8 8.8 17.1 7.4 20.4 6 24.15 6q4 0 7.575 1.75t6.175 4.8v-5.3h3v10.4H30.45v-3h5.25q-2.2-2.55-5.175-4.1Q27.55 9 24.15 9q-6.25 0-10.7 4.275Q9 17.55 9 23.75q0 6.35 4.4 10.8Q17.8 39 24.15 39q6.25 0 10.55-4.4Q39 30.2 39 23.95h3q0 7.5-5.2 12.775T24.15 42Zm6.1-9.85-7.7-7.6v-10.7h3v9.45L32.4 30Z""/></svg>"
+        Width: =214
+        X: =639
+        Y: =265
+        ZIndex: =3
+
+    cmp_MD_Timepicker_2 As cmp_MD_Timepicker:
+        action1OnSelect: |-
+            =UpdateContext({locDefaultTime:Self.selectedTime, locTimePicker: false})
+        action2OnSelect: |-
+            =UpdateContext({locDefaultTime:Self.selectedTime, locTimePicker: false})
+        defaultTime: |-
+            =With({Time: locDefaultTime},
+             Time(Hour(Time), Minute(Time), 0))
+        format: =If(Toggle2.Value, 12, 24)
+        Visible: =locTimePicker
+        X: =285
+        Y: =371
+        ZIndex: =4
+
+    cmp_MD_Button_3 As cmp_MD_Button:
+        adjustPaddingLeft: =-20
+        align: =Align.Right
+        borderRadius: =50
+        buttonText: ="SETUP"
+        Height: =145
+        iconSize: =0.5
+        onSelect: |+
+            =Set(defaults,
+                {
+                    primaryColor: Purple,
+                    secondaryColor: Pink,
+                    disabledColor: Gray,
+                    backgroundColor: White,
+                    elementBackgroundColor: LightGray,
+                    textColor: RGBA(30, 30, 30, 1),
+                    errorColor: Red,
+                    font: "Roboto, 'Segoe UI'",
+                    fontSize: 14,
+                    borderRadius: 10
+                }
+            );
+            
+            Set(defaults,
+                Patch(defaults,
+                {
+                    primaryColorHex: Match(JSON(defaults.primaryColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                    primaryColorTransparentHex: Match(JSON(defaults.primaryColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch&"4d",
+                    secondaryColorHex: Match(JSON(defaults.secondaryColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                    disabledColorHex: Match(JSON(defaults.disabledColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                    backgroundColorHex: Match(JSON(defaults.backgroundColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                    errorColorHex: Match(JSON(defaults.errorColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                    elementBackgroundColorHex: Match(JSON(defaults.elementBackgroundColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch
+                }
+                )
+            );
+            
+            
+                    
+            
+            
+            
+            
+            Set(varPrimaryColor, Purple);
+            Set(varSecondaryColor, Pink);
+            Set(varDisabledColor, Gray);
+            Set(varBackgroundColor, White);
+            Set(varTextColor, RGBA(30, 30, 30, 1));
+            
+            Set(varFont, "Roboto, 'Segoe UI'");
+            
+            //Calculate Hex Values of Colors
+            
+            Set(varPrimaryColorHex,Match(JSON(varPrimaryColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch);
+            Set(varSecondaryColorHex,Match(JSON(varSecondaryColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch);
+            Set(varDisabledColorHex,Match(JSON(varDisabledColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch);
+            Set(varBackgroundColorHex,Match(JSON(varBackgroundColor,IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch);
+            
+        outsideMargin: =50
+        svgIcon: |-
+            ="<svg xmlns='http://www.w3.org/2000/svg' height='24' width='24'><path d='M16.36 12.76C18.31 13.42 20 14.5 20 16V21H4V16C4 14.5 5.69 13.42 7.65 12.76L8.27 14L8.5 14.5C7 14.96 5.9 15.62 5.9 16V19.1H10.12L11 14.03L10.06 12.15C10.68 12.08 11.33 12.03 12 12.03C12.67 12.03 13.32 12.08 13.94 12.15L13 14.03L13.88 19.1H18.1V16C18.1 15.62 17 14.96 15.5 14.5L15.73 14L16.36 12.76M12 5C10.9 5 10 5.9 10 7C10 8.1 10.9 9 12 9C13.1 9 14 8.1 14 7C14 5.9 13.1 5 12 5M12 11C9.79 11 8 9.21 8 7C8 4.79 9.79 3 12 3C14.21 3 16 4.79 16 7C16 9.21 14.21 11 12 11Z'/></svg>
+            "
+        Width: =275
+        X: =40
+        Y: =77
+        ZIndex: =5
+
+    DatePicker1 As datepicker:
+        Height: =70
+        Size: =24
+        Width: =575
+        X: =141
+        Y: =390
+        ZIndex: =6
+
+    cmp_MD_Dialog_1 As cmp_MD_Dialog:
+        action1OnSelect: |-
+            =UpdateContext({locDialog: false})
+        action2OnSelect: |-
+            =UpdateContext({locDialog: false})
+        action2Text: ="AHA"
+        header: ="Dialog with a 2 line header"
+        text: ="Use this dialog for situations when the user immediately needs to take action and always provide 2 options."
+        Visible: =locDialog
+        ZIndex: =7
+

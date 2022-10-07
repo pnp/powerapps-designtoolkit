@@ -1,0 +1,162 @@
+cmp_MD_Dialog As CanvasComponent:
+    action1OnSelect: =true
+    action1Text: ="ACTION1"
+    action2OnSelect: =true
+    action2Text: ="ACTION2"
+    backgroundColor: =defaults.backgroundColor
+    backGroundColorHex: =defaults.backgroundColorHex
+    borderRadius: =Max(defaults.borderRadius, 20)
+    boxShadow: =true
+    dialogWidth: =500
+    Fill: =RGBA(0,0,0,0.3)
+    font: =defaults.font
+    fontSize: =defaults.fontSize
+    header: ="Meaningful Header"
+    Height: =Parent.Height
+    OnReset: |-
+        =//Otherwise the Auto-Height Labels don't set the height correctly
+        Set(varWidth, cmp_MD_Dialog.dialogWidth+1);
+        Set(varWidth, cmp_MD_Dialog.dialogWidth);
+    primaryColor: =defaults.primaryColor
+    text: ="Do you really really really want to delete this?"
+    textColor: =RGBA(30, 30, 30, 1)
+    textPaddingLeft: =20
+    Visible: =true
+    Width: =Parent.Width
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    con_Dialog As groupContainer.manualLayoutContainer:
+        Fill: =Transparent
+        Height: |-
+            =//cmp_MD_Dialog.dialogHeight+20
+            btn_dialogAction1.Y+btn_dialogAction1.Height+20
+        Width: =varWidth+20
+        X: =(Parent.Width-Self.Width)/2
+        Y: =(Parent.Height-Self.Height)/2
+        ZIndex: =4
+
+        html_dialogBoxshadow As htmlViewer:
+            Fill: =Transparent
+            Height: =Parent.Height
+            HtmlText: |-
+                ="<div 
+                    style='
+                        top:10px;
+                        left:10px;
+                        position: absolute;
+                        width: "&Parent.Width-20&"px;
+                        height: "&Parent.Height-20&"px;     
+                        box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.25);
+                        border-radius: "&cmp_MD_Dialog.borderRadius&"px;
+                        '
+                >
+                
+                </div>
+                
+                "
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Visible: =cmp_MD_Dialog.boxShadow
+            Width: =Parent.Width
+            ZIndex: =1
+
+        btn_dialogBG As button:
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            DisabledBorderColor: =Transparent
+            DisabledFill: =cmp_MD_Dialog.backgroundColor
+            DisplayMode: =DisplayMode.Disabled
+            Height: =Parent.Height-20
+            RadiusBottomLeft: =cmp_MD_Dialog.borderRadius
+            RadiusBottomRight: =cmp_MD_Dialog.borderRadius
+            RadiusTopLeft: =cmp_MD_Dialog.borderRadius
+            RadiusTopRight: =cmp_MD_Dialog.borderRadius
+            Size: =24
+            Text: =""
+            Width: =Parent.Width-20
+            X: =10
+            Y: =10
+            ZIndex: =2
+
+        btn_dialogAction1 As button:
+            BorderStyle: =BorderStyle.None
+            Color: =cmp_MD_Dialog.primaryColor
+            DisabledFill: =Transparent
+            Fill: =Transparent
+            Font: =cmp_MD_Dialog.font
+            FontWeight: =Normal
+            Height: =50
+            HoverColor: =ColorFade(Self.Color, 30%)
+            HoverFill: =Transparent
+            OnSelect: =cmp_MD_Dialog.action1OnSelect()
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            PressedFill: =Transparent
+            Size: =cmp_MD_Dialog.fontSize
+            Text: =cmp_MD_Dialog.action1Text
+            Width: =Len(Self.Text)*Self.Size*0.9+20
+            X: =con_Dialog.Width-Self.Width-25
+            Y: |-
+                =//Parent.Height-Self.Height-10
+                lbl_dialogText.Y+lbl_dialogText.Height
+            ZIndex: =3
+
+        btn_dialogAction2 As button:
+            BorderStyle: =BorderStyle.None
+            Color: =cmp_MD_Dialog.primaryColor
+            DisabledFill: =Transparent
+            Fill: =Transparent
+            Font: =cmp_MD_Dialog.font
+            FontWeight: =Normal
+            Height: =50
+            HoverColor: =ColorFade(Self.Color, 30%)
+            HoverFill: =Transparent
+            OnSelect: =cmp_MD_Dialog.action2OnSelect()
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            PressedFill: =Transparent
+            Size: =cmp_MD_Dialog.fontSize
+            Text: =cmp_MD_Dialog.action2Text
+            Width: =Len(Self.Text)*Self.Size*0.9+20
+            X: =btn_dialogAction1.X-Self.Width-8
+            Y: |-
+                =//Parent.Height-Self.Height-10
+                lbl_dialogText.Y+lbl_dialogText.Height
+            ZIndex: =4
+
+        lbl_dialogText As label:
+            AutoHeight: =true
+            Color: =cmp_MD_Dialog.textColor
+            Height: =72
+            PaddingBottom: =40
+            PaddingLeft: =40
+            PaddingRight: =40
+            PaddingTop: =40
+            Size: =cmp_MD_Dialog.fontSize
+            Text: =cmp_MD_Dialog.text
+            Width: =Parent.Width
+            Y: =If(IsBlank(cmp_MD_Dialog.header), 0, lbl_dialogHeader.Height)
+            ZIndex: =5
+
+        lbl_dialogHeader As label:
+            AutoHeight: =true
+            Color: =cmp_MD_Dialog.textColor
+            FontWeight: =FontWeight.Bold
+            Height: =72
+            PaddingBottom: =0
+            PaddingLeft: =40
+            PaddingRight: =40
+            PaddingTop: =40
+            Size: =cmp_MD_Dialog.fontSize+4
+            Text: =cmp_MD_Dialog.header
+            Width: =Parent.Width
+            ZIndex: =6
+

@@ -1,0 +1,13 @@
+"'Bottom Navigation' As screen":
+
+    Button2 As button:
+        Fill: |-
+            =ColorFade(ColorValue("#6200EE"), 50%)
+        Height: =70
+        Size: =24
+        Text: ="Button"
+        Width: =280
+        X: =40
+        Y: =40
+        ZIndex: =2
+

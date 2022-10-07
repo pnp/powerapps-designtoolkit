@@ -1,0 +1,68 @@
+"'SVG-Icons' As screen":
+
+    Gallery3 As gallery.galleryVertical:
+        Height: =653
+        Items: =Filter(MaterialDesignIcons, TextInput1.Text in name Or IsBlank(TextInput1.Text))
+        Layout: =Layout.Vertical
+        TemplateFill: =If(ThisItem.IsSelected, ColorValue(defaults.primaryColorTransparentHex))
+        TemplateSize: =90
+        Y: =111
+        ZIndex: =2
+
+        Label5 As label:
+            Color: =If(ThisItem.IsSelected, defaults.primaryColor, RGBA(0, 0, 0, 1))
+            Height: =68
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.name
+            Width: =476
+            Y: =9
+            ZIndex: =1
+
+        Image4_2 As image:
+            BorderColor: =Transparent
+            DisabledBorderColor: =Transparent
+            DisabledFill: =Transparent
+            Height: =90
+            Image: |-
+                ="data:image/svg+xml;utf8, " & EncodeUrl(
+                //Set Map svg text
+                If(ThisItem.IsSelected, Substitute(ThisItem.svgPath, "<svg ", "<svg fill='"&defaults.primaryColorHex&"' "), ThisItem.svgPath)
+                )
+            OnSelect: =Select(Parent)
+            Width: =136
+            X: =494
+            ZIndex: =2
+
+    cmp_MD_Button_4 As cmp_MD_Button:
+        outlinedButton: =true
+        svgIcon: =LookUp(MaterialDesignIcons, name=Gallery3.Selected.name, svgPath)
+        X: =183
+        Y: =897
+        ZIndex: =3
+
+    cmp_MD_Button_5 As cmp_MD_Button:
+        svgIcon: =LookUp(MaterialDesignIcons, name=Gallery3.Selected.name, svgPath)
+        X: =183
+        Y: =987
+        ZIndex: =4
+
+    TextInput1 As text:
+        Default: =""
+        Height: =70
+        HintText: ="Search for Icon"
+        Size: =21
+        Width: =560
+        X: =40
+        Y: =8
+        ZIndex: =5
+
+    cmp_MD_Checkbox_3 As cmp_MD_Checkbox:
+        Height: =77
+        svgIconEmpty: =LookUp(MaterialDesignIcons, name=Gallery3.Selected.name&"-outline", svgPath)
+        svgIconFull: =LookUp(MaterialDesignIcons, name=Gallery3.Selected.name, svgPath)
+        Width: =81
+        X: =383
+        Y: =820
+        ZIndex: =6
+

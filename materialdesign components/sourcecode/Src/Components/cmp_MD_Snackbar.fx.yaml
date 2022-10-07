@@ -1,0 +1,134 @@
+cmp_MD_Snackbar As CanvasComponent:
+    actionColor: =ColorFade(defaults.primaryColor, 70%)
+    actionOnSelect: =true
+    actionText: ="UNDO"
+    backgroundColor: =defaults.textColor
+    borderRadius: =50
+    boxShadow: =true
+    duration: =100
+    Fill: =Transparent
+    font: ="Roboto"
+    fontSize: =20
+    fontWeight: =FontWeight.Normal
+    Height: =90
+    onHide: =true
+    outsideMargin: =20
+    text: ="You really just did that?!"
+    textColor: =defaults.backgroundColor
+    textPaddingLeft: =20
+    timerStart: =true
+    transitionAnimation: =true
+    transitionTime: =200
+    Width: =600
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    tim_duration As timer:
+        Duration: =cmp_MD_Snackbar.duration
+        OnTimerEnd: =cmp_MD_Snackbar.onHide()
+        Reset: =!cmp_MD_Snackbar.timerStart
+        Start: =cmp_MD_Snackbar.timerStart
+        Visible: =false
+        X: =60
+        Y: =50
+        ZIndex: =2
+
+    con_Snackbar As groupContainer.manualLayoutContainer:
+        Height: =Parent.Height
+        Width: =Parent.Width
+        Y: |+
+            =With({shrinkTimer: tim_duration.Value+cmp_MD_Snackbar.transitionTime-cmp_MD_Snackbar.duration},
+                If(
+                    cmp_MD_Snackbar.transitionAnimation,
+                    If(
+                        tim_duration.Value<=cmp_MD_Snackbar.transitionTime,
+                        -cmp_MD_Snackbar.Height*(tim_duration.Value-cmp_MD_Snackbar.transitionTime)/cmp_MD_Snackbar.transitionTime,
+                        shrinkTimer>=0,
+                        cmp_MD_Snackbar.Height*(shrinkTimer)/cmp_MD_Snackbar.transitionTime,
+                        0),
+                    0
+                )
+            )
+            
+        ZIndex: =4
+
+        html_snackShadow As htmlViewer:
+            Height: =cmp_MD_Snackbar.Height
+            HtmlText: |-
+                ="<div 
+                    style='
+                        position: absolute;
+                        left: "&cmp_MD_Snackbar.outsideMargin&"px;
+                        top: "&cmp_MD_Snackbar.outsideMargin&"px;
+                        width: "&btn_snackBackground.Width&"px;
+                        height: "&btn_snackBackground.Height&"px;
+                        border-radius: "&cmp_MD_Snackbar.borderRadius&"px;        
+                        box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.25);
+                        '
+                >
+                
+                </div>
+                
+                "
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =cmp_MD_Snackbar.Width
+            ZIndex: =1
+
+        btn_snackBackground As button:
+            Align: =Align.Left
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            Color: =cmp_MD_Snackbar.textColor
+            DisabledColor: =cmp_MD_Snackbar.textColor
+            DisabledFill: =cmp_MD_Snackbar.backgroundColor
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =cmp_MD_Snackbar.backgroundColor
+            FocusedBorderColor: =Transparent
+            FocusedBorderThickness: =0
+            Font: =cmp_MD_Snackbar.font
+            FontWeight: =cmp_MD_Snackbar.fontWeight
+            Height: =cmp_MD_Snackbar.Height-2*cmp_MD_Snackbar.outsideMargin
+            HoverFill: =Self.Fill
+            PaddingBottom: =0
+            PaddingLeft: =cmp_MD_Snackbar.textPaddingLeft
+            PaddingRight: =btn_snackAction.Width
+            PaddingTop: =0
+            PressedFill: =RGBA(0, 0, 0, 0.5)
+            RadiusBottomLeft: =cmp_MD_Snackbar.borderRadius
+            RadiusBottomRight: =cmp_MD_Snackbar.borderRadius
+            RadiusTopLeft: =cmp_MD_Snackbar.borderRadius
+            RadiusTopRight: =cmp_MD_Snackbar.borderRadius
+            Size: =cmp_MD_Snackbar.fontSize
+            Text: =cmp_MD_Snackbar.text
+            Width: =cmp_MD_Snackbar.Width-2*cmp_MD_Snackbar.outsideMargin
+            X: =cmp_MD_Snackbar.outsideMargin
+            Y: =cmp_MD_Snackbar.outsideMargin
+            ZIndex: =4
+
+        btn_snackAction As button:
+            BorderStyle: =BorderStyle.None
+            Color: =cmp_MD_Snackbar.actionColor
+            DisabledFill: =Transparent
+            Fill: =Transparent
+            Font: =cmp_MD_Snackbar.font
+            FontWeight: =cmp_MD_Snackbar.fontWeight
+            Height: =btn_snackBackground.Height
+            HoverColor: =ColorFade(Self.Color, 30%)
+            HoverFill: =Transparent
+            OnSelect: =cmp_MD_Snackbar.actionOnSelect()
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            PressedFill: =Transparent
+            Size: =cmp_MD_Snackbar.fontSize
+            Text: =cmp_MD_Snackbar.actionText
+            Width: =Self.Size*10
+            X: =btn_snackBackground.Width+btn_snackBackground.X-Self.Width
+            Y: =btn_snackBackground.Y
+            ZIndex: =5
+

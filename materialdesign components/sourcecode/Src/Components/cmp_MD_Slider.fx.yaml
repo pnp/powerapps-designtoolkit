@@ -1,0 +1,183 @@
+cmp_MD_Slider As CanvasComponent:
+    disabledColor: =RGBA(0, 0, 0, 1)
+    elementBackgroundColorHex: =defaults.elementBackgroundColorHex
+    Fill: =Transparent
+    font: ="Roboto"
+    fontSize: =10
+    fontWeight: =Normal
+    Height: =cmp_MD_Slider.outsideMargin*2 + cmp_MD_Slider.toggleSize+20
+    lineWidth: |
+        =8
+    OnReset: =
+    outsideMargin: =20
+    primaryColor: =defaults.primaryColor
+    primaryColorTransparentHex: =defaults.primaryColorTransparentHex
+    showInputLabel: =true
+    showLabel: =true
+    textColor: =defaults.textColor
+    toggleSize: =20
+    value: =sld_slider.Value
+    valueDefault: =42
+    valueMax: =500
+    valueMin: =0
+    Width: =cmp_MD_Slider.outsideMargin*2 + cmp_MD_Slider.lineSize + 100
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    img_sliderLabelTriangle As image:
+        Height: =20
+        Image: |-
+            ="data:image/svg+xml;utf8," & EncodeUrl("<svg xmlns='http://www.w3.org/2000/svg' fill='"& cmp_MD_Slider.elementBackgroundColorHex &"' viewBox='0 0 16 16'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/>
+            </svg>")
+        Visible: =cmp_MD_Slider.showLabel
+        Width: =20
+        X: =btn_sliderLabel.X + (btn_sliderLabel.Width-Self.Width)/2
+        Y: =btn_sliderLabel.Y+btn_sliderLabel.Height-8
+        ZIndex: =2
+
+    btn_sliderLabel As button:
+        BorderColor: =Transparent
+        Color: =cmp_MD_Slider.textColor
+        DisplayMode: =DisplayMode.View
+        Fill: =ColorValue(cmp_MD_Slider.elementBackgroundColorHex)
+        Font: =cmp_MD_Slider.font
+        FontWeight: =cmp_MD_Slider.fontWeight
+        Height: =30
+        HoverBorderColor: =Self.BorderColor
+        HoverFill: =Self.Fill
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Size: =cmp_MD_Slider.fontSize
+        Text: =Text(sld_slider.Value)
+        Visible: =cmp_MD_Slider.showLabel
+        Width: =40
+        X: =cir_sliderHandle.X-10
+        ZIndex: =3
+
+    html_sliderHandleShadow As htmlViewer:
+        Height: =41
+        HtmlText: |-
+            ="<div style='
+            margin: 5px;
+            width: "& cir_sliderHandle.Width&"px; 
+            height: "& cir_sliderHandle.Height&"px; 
+            box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.5); 
+            border-radius: 10px
+            '>
+            </div>"
+        PaddingLeft: =0
+        PaddingRight: =0
+        Width: =35
+        X: =cir_sliderHandle.X-5
+        Y: =cir_sliderHandle.Y-10
+        ZIndex: =4
+
+    btn_sliderLine As button:
+        BorderColor: |-
+            =ColorValue("#6200EE4d")
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Fill: =If(!isActive, ColorValue(cmp_MD_Slider.primaryColorTransparentHex), ColorValue(cmp_MD_Slider.elementBackgroundColorHex))
+        Height: =cmp_MD_Slider.lineWidth
+        HoverBorderColor: =Transparent
+        HoverFill: =Self.Fill
+        OnSelect: =Set(isCheck, !isCheck)
+        PaddingLeft: =0
+        PaddingRight: =0
+        PressedBorderColor: =Transparent
+        PressedFill: =Self.Fill
+        RadiusBottomLeft: =32
+        RadiusBottomRight: =32
+        RadiusTopLeft: =32
+        RadiusTopRight: =32
+        Size: =24
+        Text: =""
+        Width: |-
+            =
+            sld_slider.Width-cmp_MD_Slider.toggleSize/2
+        X: =cmp_MD_Slider.outsideMargin+2
+        Y: =cir_sliderHandle.Y + (cir_sliderHandle.Height-Self.Height)/2
+        ZIndex: =5
+
+    cir_sliderHandle As circle:
+        Fill: =If(!isActive, cmp_MD_Slider.primaryColor, cmp_MD_Slider.disabledColor)
+        Height: =cmp_MD_Slider.toggleSize
+        Width: =cmp_MD_Slider.toggleSize
+        X: =sld_slider.X + (sld_slider.Value-sld_slider.Min)*(sld_slider.Width-Self.Width)/(sld_slider.Max-sld_slider.Min)
+        Y: =cmp_MD_Slider.outsideMargin+20
+        ZIndex: =6
+
+    sld_slider As slider:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Default: =If(!IsBlank(txt_sliderText.Text), Value(txt_sliderText.Text), 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        HandleActiveFill: =Transparent
+        HandleFill: =Transparent
+        HandleSize: =cmp_MD_Slider.toggleSize
+        Height: =cmp_MD_Slider.toggleSize
+        Max: =cmp_MD_Slider.valueMax
+        Min: =cmp_MD_Slider.valueMin
+        OnChange: =Set(isActive,false); Set(isValidationError, false); Set(txtDefault, Self.Value)
+        OnSelect: =Set(isActive, true)
+        PressedBorderColor: =Transparent
+        RailFill: =RGBA(0, 0, 0, 0)
+        Reset: =isSliderReset
+        ShowValue: =false
+        ValueFill: =RGBA(0, 0, 0, 0)
+        ValueHoverFill: =Transparent
+        Width: =cmp_MD_Slider.Width-cmp_MD_Slider.outsideMargin*2-If(cmp_MD_Slider.showInputLabel, cmp_MD_Slider.outsideMargin+txt_sliderText.Width)
+        X: =cmp_MD_Slider.outsideMargin
+        Y: =40
+        ZIndex: =7
+
+    txt_sliderText As text:
+        Align: =Align.Right
+        BorderColor: =Transparent
+        Color: =cmp_MD_Slider.textColor
+        Default: =txtDefault
+        Fill: =ColorValue(cmp_MD_Slider.elementBackgroundColorHex)
+        Font: =cmp_MD_Slider.font
+        FontWeight: =cmp_MD_Slider.fontWeight
+        Height: =30
+        HoverBorderColor: =Self.BorderColor
+        HoverFill: =ColorValue(cmp_MD_Slider.elementBackgroundColorHex)
+        OnChange: |-
+            =Set(
+                isSliderReset,
+                true
+            );
+            If (
+                Value(txt_sliderText.Text) > sld_slider.Max Or Value(txt_sliderText.Text) < sld_slider.Min,
+                Set(
+                    isValidationError,
+                    true
+                )
+            )
+        PaddingBottom: =0
+        PaddingLeft: =5
+        PaddingRight: =8
+        PaddingTop: =0
+        PressedFill: =Self.HoverFill
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =cmp_MD_Slider.fontSize
+        Visible: =cmp_MD_Slider.showInputLabel
+        Width: =34
+        X: =cmp_MD_Slider.Width-Self.Width-cmp_MD_Slider.outsideMargin
+        Y: =cir_sliderHandle.Y + (cir_sliderHandle.Height - Self.Height)/2
+        ZIndex: =8
+
+    rec_sliderTextMarker As rectangle:
+        Fill: =cmp_MD_Slider.primaryColor
+        Height: =2
+        Visible: =cmp_MD_Slider.showInputLabel
+        Width: =txt_sliderText.Width
+        X: =txt_sliderText.X
+        Y: =txt_sliderText. Y +txt_sliderText.Height
+        ZIndex: =9
+

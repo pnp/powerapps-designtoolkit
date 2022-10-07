@@ -1,0 +1,131 @@
+cmp_MD_Gallery As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    galleryContent: |-
+        =Table(
+            //row 1, 3 images
+            {
+                id: 1,
+                image: "https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGVnb3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+                width: cmp_MD_Gallery.singleImageWidth
+            },
+            {
+                id: 2,
+                image:"https://images.unsplash.com/photo-1611604548018-d56bbd85d681?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bGVnb3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+                width: cmp_MD_Gallery.singleImageWidth
+            },
+            {
+                id: 3,
+                image: "https://images.unsplash.com/photo-1558492426-df14e290aefa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGxlZ298ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+                width: cmp_MD_Gallery.singleImageWidth
+            },
+            // row 2, 2 images (1st 2/3, 2nd 1/3)
+            {
+                id: 4,
+                image: "https://images.unsplash.com/photo-1610483178766-8092d96033f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGxlZ298ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+                width: 2 * (cmp_MD_Gallery.singleImageWidth) + cmp_MD_Gallery.imagePadding
+            },
+            {id: 5},
+            {
+                id: 5,
+                image: "https://images.unsplash.com/photo-1513384312027-9fa69a360337?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGxlZ298ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+                width: cmp_MD_Gallery.singleImageWidth
+            },
+            //3rd row - 1 image
+            {
+                id: 6,
+                image: "https://images.unsplash.com/photo-1589254066007-898d52d910d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fGxlZ298ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+                width: 3 * (cmp_MD_Gallery.singleImageWidth) + 2 * ( cmp_MD_Gallery.imagePadding)
+            },
+            {id: 7},
+            {id: 8},
+            //4th row - 2 images (1st 1/3, 2nd 2/3)
+            {
+                id: 7,
+                image: "https://images.unsplash.com/photo-1518331483807-f6adb0e1ad23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fGxlZ298ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+                width: cmp_MD_Gallery.singleImageWidth
+            },
+            {
+                id: 8,
+                image: "https://images.unsplash.com/photo-1560167016-022b78a0258e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzF8fGxlZ298ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+                width: 2 * (cmp_MD_Gallery.singleImageWidth) + cmp_MD_Gallery.imagePadding
+            },
+            {id: 9},
+            //5th row - 3 images
+            {
+                id: 9,
+                image: "https://images.unsplash.com/photo-1538448174498-9956c159edb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fGxlZ298ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+                width: cmp_MD_Gallery.singleImageWidth
+            },
+            {
+                id: 10,
+                image: "https://images.unsplash.com/photo-1563823263008-ec7877629ba0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fGxlZ298ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+                width: cmp_MD_Gallery.singleImageWidth
+            },
+            {
+                id: 11,
+                image: "https://images.unsplash.com/photo-1584847642060-a46e239155a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fGxlZ298ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+                width: cmp_MD_Gallery.singleImageWidth
+            },
+            //6th row -rest
+            {
+                id: 12,
+                image: "https://images.unsplash.com/photo-1527694747350-2d483ffcff28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDV8fGxlZ298ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+                width: cmp_MD_Gallery.singleImageWidth
+            },
+            {
+                id: 13,
+                image: "https://images.unsplash.com/photo-1624979641604-f01368fab830?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDl8fGxlZ298ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+                width: 2 * (cmp_MD_Gallery.singleImageWidth) + cmp_MD_Gallery.imagePadding
+            }
+        )
+    Height: =1000
+    imagePadding: =10
+    singleImageWidth: =200
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =1000
+        Items: =cmp_MD_Gallery.galleryContent
+        Layout: =Layout.Vertical
+        ShowScrollbar: =false
+        TemplatePadding: =cmp_MD_Gallery.imagePadding
+        TemplateSize: =300
+        Transition: =Transition.Pop
+        Width: =Parent.Width
+        WrapCount: =3
+        ZIndex: =1
+
+        Image1 As image:
+            Height: =300
+            Image: =ThisItem.image
+            ImagePosition: =ImagePosition.Fill
+            OnSelect: =Set(isLarge, true)
+            Width: =ThisItem.width
+            Y: |-
+                =//(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                Slider1.Value
+            ZIndex: =1
+
+    Slider1 As slider:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        HandleActiveFill: =Transparent
+        HandleFill: =RGBA(0, 0, 0, 0)
+        HandleHoverFill: =Transparent
+        HandleSize: =Parent.Width/2
+        Height: =Gallery1.Height
+        HoverBorderColor: =Transparent
+        Layout: =Layout.Vertical
+        Max: =0
+        Min: =Gallery1.Height*(-1)
+        PressedBorderColor: =Transparent
+        RailFill: =RGBA(0, 0, 0, 0)
+        RailHoverFill: =Transparent
+        ShowValue: =false
+        ValueFill: =RGBA(0, 0, 0, 0)
+        Width: =Parent.Width
+        ZIndex: =2
+

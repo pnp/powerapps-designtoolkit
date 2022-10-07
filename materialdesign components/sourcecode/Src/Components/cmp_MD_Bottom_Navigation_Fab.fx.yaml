@@ -1,0 +1,182 @@
+cmp_MD_Bottom_Navigation_Fab As CanvasComponent:
+    accentColor: =White
+    actionButton: =true
+    actionButtonBackground: =true
+    actionButtonIcon: |-
+        ="data:image/svg+xml;utf8, " & EncodeUrl(
+            "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'>
+           <path fill='" & cmp_MD_Bottom_Navigation_Fab.iconColor & "' d='M22.5 38V25.5H10v-3h12.5V10h3v12.5H38v3H25.5V38Z' />
+        </svg>"
+        )
+    actionButtonPosition: ="Center"
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =100
+    iconColor: |-
+        ="#ffffff"
+    iconHoverColor: |-
+        ="#B07FF6"
+    iconSize: =24  
+    navContent: |-
+        =Table(
+            {
+                id: 1,
+                title: "Menu",
+                image: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'>
+           <path fill='" & cmp_MD_Bottom_Navigation_Fab.iconColor & "' d='M6 36v-3h36v3Zm0-10.5v-3h36v3ZM6 15v-3h36v3Z' />
+        </svg>"
+                ),
+                imageHover:         "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'>
+           <path fill='"&cmp_MD_Bottom_Navigation_Fab.iconHoverColor &"' d='M6 36v-3h36v3Zm0-10.5v-3h36v3ZM6 15v-3h36v3Z' />
+        </svg>"
+                )
+            },
+            {
+                id: 2,
+                title: "Search",
+                image: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'>
+           <path fill='" & cmp_MD_Bottom_Navigation_Fab.iconColor & "' d='M39.8 41.95 26.65 28.8q-1.5 1.3-3.5 2.025-2 .725-4.25.725-5.4 0-9.15-3.75T6 18.75q0-5.3 3.75-9.05 3.75-3.75 9.1-3.75 5.3 0 9.025 3.75 3.725 3.75 3.725 9.05 0 2.15-.7 4.15-.7 2-2.1 3.75L42 39.75Zm-20.95-13.4q4.05 0 6.9-2.875Q28.6 22.8 28.6 18.75t-2.85-6.925Q22.9 8.95 18.85 8.95q-4.1 0-6.975 2.875T9 18.75q0 4.05 2.875 6.925t6.975 2.875' />
+        </svg>"
+                ), imageHover: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'>
+           <path fill='" & cmp_MD_Bottom_Navigation_Fab.iconHoverColor & "' d='M39.8 41.95 26.65 28.8q-1.5 1.3-3.5 2.025-2 .725-4.25.725-5.4 0-9.15-3.75T6 18.75q0-5.3 3.75-9.05 3.75-3.75 9.1-3.75 5.3 0 9.025 3.75 3.725 3.75 3.725 9.05 0 2.15-.7 4.15-.7 2-2.1 3.75L42 39.75Zm-20.95-13.4q4.05 0 6.9-2.875Q28.6 22.8 28.6 18.75t-2.85-6.925Q22.9 8.95 18.85 8.95q-4.1 0-6.975 2.875T9 18.75q0 4.05 2.875 6.925t6.975 2.875' />
+        </svg>"
+                )
+            },
+            {
+                id: 3,
+                title: "Notifications",
+                image: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'>
+           <path fill='" & cmp_MD_Bottom_Navigation_Fab.iconColor & "' d='M8 38v-3h4.2V19.7q0-4.2 2.475-7.475Q17.15 8.95 21.2 8.1V6.65q0-1.15.825-1.9T24 4q1.15 0 1.975.75.825.75.825 1.9V8.1q4.05.85 6.55 4.125t2.5 7.475V35H40v3Zm16-14.75ZM24 44q-1.6 0-2.8-1.175Q20 41.65 20 40h8q0 1.65-1.175 2.825Q25.65 44 24 44Zm-8.8-9h17.65V19.7q0-3.7-2.55-6.3-2.55-2.6-6.25-2.6t-6.275 2.6Q15.2 16 15.2 19.7Z' />
+        </svg>"
+                ),
+                imageHover: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'>
+           <path fill='" & cmp_MD_Bottom_Navigation_Fab.iconHoverColor & "' d='M8 38v-3h4.2V19.7q0-4.2 2.475-7.475Q17.15 8.95 21.2 8.1V6.65q0-1.15.825-1.9T24 4q1.15 0 1.975.75.825.75.825 1.9V8.1q4.05.85 6.55 4.125t2.5 7.475V35H40v3Zm16-14.75ZM24 44q-1.6 0-2.8-1.175Q20 41.65 20 40h8q0 1.65-1.175 2.825Q25.65 44 24 44Zm-8.8-9h17.65V19.7q0-3.7-2.55-6.3-2.55-2.6-6.25-2.6t-6.275 2.6Q15.2 16 15.2 19.7Z' />
+        </svg>"
+                )
+            },
+            {
+                id: 4,
+                title: "Share",
+                image: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'>
+           <path fill='" & cmp_MD_Bottom_Navigation_Fab.iconColor & "' d='M36.35 44q-2.35 0-4.025-1.675Q30.65 40.65 30.65 38.3q0-.35.075-.825t.225-.875L15.8 27.8q-.75.85-1.85 1.375t-2.25.525q-2.35 0-4.025-1.675Q6 26.35 6 24q0-2.4 1.675-4.05T11.7 18.3q1.15 0 2.2.45 1.05.45 1.9 1.3l15.15-8.7q-.15-.35-.225-.8-.075-.45-.075-.85 0-2.4 1.675-4.05T36.35 4q2.4 0 4.05 1.65t1.65 4.05q0 2.35-1.65 4.025-1.65 1.675-4.05 1.675-1.15 0-2.225-.375Q33.05 14.65 32.3 13.8l-15.15 8.4q.1.4.175.925.075.525.075.875t-.075.75q-.075.4-.175.8l15.15 8.6q.75-.7 1.75-1.125 1-.425 2.3-.425 2.4 0 4.05 1.65t1.65 4.05q0 2.35-1.65 4.025Q38.75 44 36.35 44Zm0-31.6q1.15 0 1.925-.775.775-.775.775-1.925t-.775-1.925Q37.5 7 36.35 7t-1.925.775q-.775.775-.775 1.925t.775 1.925q.775.775 1.925.775ZM11.7 26.7q1.15 0 1.925-.775.775-.775.775-1.925t-.775-1.925Q12.85 21.3 11.7 21.3t-1.925.775Q9 22.85 9 24t.775 1.925q.775.775 1.925.775ZM36.35 41q1.15 0 1.925-.775.775-.775.775-1.925t-.775-1.925Q37.5 35.6 36.35 35.6t-1.925.775q-.775.775-.775 1.925t.775 1.925Q35.2 41 36.35 41Zm0-31.3ZM11.7 24Zm24.65 14.3Z' />
+        </svg>"
+                ), 
+                imageHover: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'>
+           <path fill='" & cmp_MD_Bottom_Navigation_Fab.iconHoverColor & "' d='M36.35 44q-2.35 0-4.025-1.675Q30.65 40.65 30.65 38.3q0-.35.075-.825t.225-.875L15.8 27.8q-.75.85-1.85 1.375t-2.25.525q-2.35 0-4.025-1.675Q6 26.35 6 24q0-2.4 1.675-4.05T11.7 18.3q1.15 0 2.2.45 1.05.45 1.9 1.3l15.15-8.7q-.15-.35-.225-.8-.075-.45-.075-.85 0-2.4 1.675-4.05T36.35 4q2.4 0 4.05 1.65t1.65 4.05q0 2.35-1.65 4.025-1.65 1.675-4.05 1.675-1.15 0-2.225-.375Q33.05 14.65 32.3 13.8l-15.15 8.4q.1.4.175.925.075.525.075.875t-.075.75q-.075.4-.175.8l15.15 8.6q.75-.7 1.75-1.125 1-.425 2.3-.425 2.4 0 4.05 1.65t1.65 4.05q0 2.35-1.65 4.025Q38.75 44 36.35 44Zm0-31.6q1.15 0 1.925-.775.775-.775.775-1.925t-.775-1.925Q37.5 7 36.35 7t-1.925.775q-.775.775-.775 1.925t.775 1.925q.775.775 1.925.775ZM11.7 26.7q1.15 0 1.925-.775.775-.775.775-1.925t-.775-1.925Q12.85 21.3 11.7 21.3t-1.925.775Q9 22.85 9 24t.775 1.925q.775.775 1.925.775ZM36.35 41q1.15 0 1.925-.775.775-.775.775-1.925t-.775-1.925Q37.5 35.6 36.35 35.6t-1.925.775q-.775.775-.775 1.925t.775 1.925Q35.2 41 36.35 41Zm0-31.3ZM11.7 24Zm24.65 14.3Z' />
+        </svg>"
+                )
+            }
+        )
+    onFab: =true
+    primaryColor: |-
+        =ColorValue("#6200EE")
+    secondaryColor: |-
+        =ColorValue("#03DAC5")
+    selectedItem: =gal_Nav_1.Selected.id
+    Width: =App.DesignWidth
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    "gal_Nav_1 As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver4.0'":
+        Fill: =cmp_MD_Bottom_Navigation_Fab.primaryColor
+        Height: =56
+        Items: =cmp_MD_Bottom_Navigation_Fab.navContent
+        TemplatePadding: =0
+        TemplateSize: =If(cmp_MD_Bottom_Navigation_Fab.actionButtonPosition = "Center", 70, 120)
+        Y: =44
+        ZIndex: =1
+
+        img_icon_2 As image:
+            Height: =cmp_MD_Bottom_Navigation_Fab.iconSize
+            Image: =ThisItem.image
+            OnSelect: =Select(Parent)
+            Width: =cmp_MD_Bottom_Navigation_Fab.iconSize
+            X: =(Parent.TemplateWidth- Self.Width)/2
+            Y: =(Parent.TemplateHeight-Self.Height)/2
+            ZIndex: =1
+
+        img_icon_selected_1 As image:
+            Height: =cmp_MD_Bottom_Navigation_Fab.iconSize
+            Image: =ThisItem.imageHover
+            OnSelect: =Select(Parent)
+            Visible: =If(!ThisItem.IsSelected, true, false)
+            Width: =cmp_MD_Bottom_Navigation_Fab.iconSize
+            X: =img_icon_2.X
+            Y: =img_icon_2.Y
+            ZIndex: =3
+
+    grp_fab As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =7
+
+        circle_FabBackground As circle:
+            Fill: =cmp_MD_Bottom_Navigation_Fab.accentColor
+            Height: =80
+            Visible: =cmp_MD_Bottom_Navigation_Fab.actionButton && cmp_MD_Bottom_Navigation_Fab.actionButtonBackground
+            Width: =80
+            X: =If(cmp_MD_Bottom_Navigation_Fab.actionButtonPosition = "Center", (cmp_MD_Bottom_Navigation_Fab.Width -80)/2, 500)
+            Y: =6
+            ZIndex: =2
+
+        html_boxShadowFab As htmlViewer:
+            Height: =78
+            HtmlText: |-
+                ="<div style='
+                margin: 5px;
+                width: "& btn_actionButton.Width&"px; 
+                height: "& btn_actionButton.Height&"px; 
+                box-shadow: 1px 2px 4px 2px rgba(0,0,0,0.5); 
+                border-radius: 100px
+                '>
+                </div>"
+            PaddingLeft: =0
+            PaddingRight: =0
+            Visible: =cmp_MD_Bottom_Navigation_Fab.actionButton
+            Width: =73
+            X: =btn_actionButton.X -5
+            Y: =btn_actionButton.Y-10
+            ZIndex: =3
+
+        btn_actionButton As button:
+            BorderColor: =Self.Fill
+            BorderStyle: =BorderStyle.None
+            Fill: =cmp_MD_Bottom_Navigation_Fab.secondaryColor
+            Height: =56
+            HoverBorderColor: =Self.BorderColor
+            HoverFill: =ColorFade(Self.Fill, -20%)
+            OnSelect: =cmp_MD_Bottom_Navigation_Fab.onFab()
+            PressedBorderColor: =Self.BorderColor
+            PressedFill: =Self.HoverFill
+            RadiusBottomLeft: =100
+            RadiusBottomRight: =100
+            RadiusTopLeft: =100
+            RadiusTopRight: =100
+            Size: =24
+            Text: =""
+            Visible: =cmp_MD_Bottom_Navigation_Fab.actionButton
+            Width: =56
+            X: =circle_FabBackground.X + (circle_FabBackground.Width - Self.Width)/2
+            Y: =circle_FabBackground.Y + (circle_FabBackground.Height - Self.Height)/2
+            ZIndex: =4
+
+        img_actionButtonIcon As image:
+            Height: =24
+            Image: =cmp_MD_Bottom_Navigation_Fab.actionButtonIcon
+            OnSelect: =cmp_MD_Bottom_Navigation_Fab.onFab()
+            Visible: =cmp_MD_Bottom_Navigation_Fab.actionButton
+            Width: =24
+            X: =btn_actionButton.X + (btn_actionButton.Width-Self.Width)/2
+            Y: =btn_actionButton.Y + (btn_actionButton.Height -Self.Height)/2
+            ZIndex: =5
+

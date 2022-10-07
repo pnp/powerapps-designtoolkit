@@ -1,0 +1,71 @@
+cmp_MD_ProgressIndicator As CanvasComponent:
+    Fill: =Transparent
+    Height: =6
+    OnReset: =
+    primaryColorHex: =defaults.primaryColorHex
+    primaryColorTransparentHex: =defaults.primaryColorTransparentHex
+    transitionStart: =Self.Visible
+    Width: =Parent.Width
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    img_Loading As image:
+        Fill: =ColorValue(cmp_MD_ProgressIndicator.primaryColorTransparentHex)
+        Height: =Parent.Height
+        Image: |-
+            ="data:image/svg+xml;utf8, " & EncodeUrl(
+                "<svg xmlns='http://www.w3.org/2000/svg' height='10' width='50'>
+                
+            <rect x='0' y='0' width='10' height='10' fill='"&cmp_MD_ProgressIndicator.primaryColorHex&"'>
+                <animate
+                    attributeName='x'
+                    dur='2s'
+                    from='-30'
+                    to='80'
+                    repeatCount='indefinite'
+                    />
+                <animate
+                    attributeName='width'
+                    dur='2s'
+                    values='10;30;10'
+                    repeatCount='indefinite'
+                    />
+            </rect>
+            
+            <rect x='0' y='0' width='10' height='10' fill='"&cmp_MD_ProgressIndicator.primaryColorHex&"'>
+                <animate
+                    attributeName='x'
+                    dur='2s'
+                    begin='-1s'
+                    from='-30'
+                    to='80'
+                    repeatCount='indefinite'
+                    />
+                <animate
+                    attributeName='width'
+                    dur='2s'
+                    values='10;30;10'
+                    repeatCount='indefinite'
+                    />
+            </rect>
+                
+            </svg>"
+            )
+        ImagePosition: =ImagePosition.Fill
+        Width: =Parent.Width
+        Y: |-
+            =
+                    -cmp_MD_ProgressIndicator.Height*(tim_ProgressIndicator.Value-200)/200
+        ZIndex: =1
+
+    tim_ProgressIndicator As timer:
+        Duration: =200
+        Height: =10
+        Reset: =!cmp_MD_ProgressIndicator.transitionStart
+        Start: =cmp_MD_ProgressIndicator.transitionStart
+        Visible: =false
+        Width: =280
+        X: =40
+        ZIndex: =2
+

@@ -1,0 +1,501 @@
+cmp_MD_Timepicker As CanvasComponent:
+    action1OnSelect: =true
+    action1Text: ="OK"
+    action2OnSelect: =true
+    action2Text: ="CANCEL"
+    backgroundColor: =White
+    borderRadius: =10
+    boxShadow: =true
+    defaultTime: =Now()
+    Fill: =Transparent
+    font: ="Roboto"
+    format: =24
+    header: ="SELECT TIME"
+    Height: =530
+    OnReset: |-
+        =Set(varAMPM, If(Hour(cmp_MD_Timepicker.defaultTime)>=12, "PM", "AM"));
+        Set(varHourNew, 
+            If(
+                cmp_MD_Timepicker.format=12,
+                With({hourValue: Mod(Coalesce(Hour(cmp_MD_Timepicker.defaultTime), 12), 12)},
+                    If(hourValue=0, 12, hourValue)
+                ), 
+                Coalesce(Hour(cmp_MD_Timepicker.defaultTime), 12)));
+        Set(varMinuteNew, Coalesce(Minute(cmp_MD_Timepicker.defaultTime), 12));
+    primaryColor: =varPrimaryColor
+    primaryColorHex: =varPrimaryColorHex
+    selectedTime: |-
+        =Time(
+            If(cmp_MD_Timepicker.format=12&&varHourNew=12,0,varHourNew)+ If(cmp_MD_Timepicker.format=12&&varAMPM="PM", 12, 0),
+            varMinuteNew, 
+            0)
+    textColor: =RGBA(30, 30, 30, 1)
+    Visible: =true
+    Width: =348
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    btn_timBG As button:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        DisabledBorderColor: =Transparent
+        DisabledFill: =cmp_MD_Timepicker.backgroundColor
+        DisplayMode: =DisplayMode.Disabled
+        Height: =Parent.Height-20
+        RadiusBottomLeft: =cmp_MD_Timepicker.borderRadius
+        RadiusBottomRight: =cmp_MD_Timepicker.borderRadius
+        RadiusTopLeft: =cmp_MD_Timepicker.borderRadius
+        RadiusTopRight: =cmp_MD_Timepicker.borderRadius
+        Size: =24
+        Text: =""
+        Width: =Parent.Width-20
+        X: =(Parent.Width-Self.Width)/2
+        Y: =(Parent.Height-Self.Height)/2
+        ZIndex: =1
+
+    html_timBoxshadow As htmlViewer:
+        Fill: =Transparent
+        Height: =Parent.Height
+        HtmlText: |-
+            ="<div 
+                style='
+                    top:10px;
+                    left:10px;
+                    position: absolute;
+                    width: "&Parent.Width-20&"px;
+                    height: "&Parent.Height-20&"px;     
+                    box-shadow: 2px 2px 3px 3px rgba(0,0,0,0.5);
+                    border-radius: "&cmp_MD_Timepicker.borderRadius&"px;
+                    '
+            >
+            
+            </div>
+            
+            "
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Visible: =cmp_MD_Timepicker.boxShadow
+        Width: =Parent.Width
+        ZIndex: =2
+
+    btn_timAction1 As button:
+        Color: =cmp_MD_Timepicker.primaryColor
+        DisabledFill: =Transparent
+        Fill: =Transparent
+        FocusedBorderColor: =cmp_MD_Timepicker.primaryColor
+        FocusedBorderThickness: =2
+        Font: =cmp_MD_Timepicker.font
+        FontWeight: =Normal
+        Height: =36
+        HoverColor: =ColorFade(Self.Color, 30%)
+        HoverFill: =Transparent
+        OnSelect: =cmp_MD_Timepicker.action1OnSelect()
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedFill: =Transparent
+        Size: |
+            =14
+        Text: =cmp_MD_Timepicker.action1Text
+        Width: =Len(Self.Text)*Self.Size*0.9+20
+        X: =Parent.Width-Self.Width-30
+        Y: =466
+        ZIndex: =3
+
+    btn_timAction2 As button:
+        Color: =cmp_MD_Timepicker.primaryColor
+        DisabledFill: =Transparent
+        Fill: =Transparent
+        FocusedBorderColor: =cmp_MD_Timepicker.primaryColor
+        FocusedBorderThickness: =2
+        Font: =cmp_MD_Timepicker.font
+        FontWeight: =Normal
+        Height: =36
+        HoverColor: =ColorFade(Self.Color, 30%)
+        HoverFill: =Transparent
+        OnSelect: =cmp_MD_Timepicker.action2OnSelect()
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedFill: =Transparent
+        Size: |
+            =14
+        Text: =cmp_MD_Timepicker.action2Text
+        Width: =Len(Self.Text)*Self.Size*0.9+20
+        X: =Parent.Width-Self.Width-40-btn_timAction1.Width
+        Y: =466
+        ZIndex: =4
+
+    lbl_timHeader As label:
+        AutoHeight: =true
+        Color: =ColorFade(cmp_MD_Timepicker.textColor, 50%)
+        FontWeight: =FontWeight.Semibold
+        Height: =33
+        PaddingBottom: =0
+        PaddingLeft: =24
+        PaddingRight: =40
+        PaddingTop: =11
+        Size: |
+            =10
+        Text: =cmp_MD_Timepicker.header
+        Width: =338
+        X: =10
+        Y: =18
+        ZIndex: =5
+
+    con_timeSelect As groupContainer.horizontalAutoLayoutContainer:
+        Height: =80
+        LayoutMode: =LayoutMode.Auto
+        Width: |
+            =Parent.Width-67
+        X: =34
+        Y: =62
+        ZIndex: =6
+
+        txt_timHours As text:
+            Align: =Align.Center
+            BorderThickness: =0
+            Color: =If(!varChooseMinute, cmp_MD_Timepicker.primaryColor, cmp_MD_Timepicker.textColor)
+            Default: =Text(Value(varHourNew), "00")
+            Fill: =If(!varChooseMinute, ColorValue(cmp_MD_Timepicker.primaryColorHex&"4d"), LightGray)
+            FillPortions: =1
+            FocusedBorderThickness: =0
+            Font: =cmp_MD_Timepicker.font
+            Format: =TextFormat.Number
+            Height: =80
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(cmp_MD_Timepicker.primaryColor, 50%)
+            LayoutMinHeight: =70
+            LayoutMinWidth: =20
+            OnChange: |-
+                =Set(varHourOld, varHourNew);
+                Set(varHourNew, Value(Self.Text));
+                Set(varMinuteOld, varMinuteNew);
+                Set(varTransition, false);
+                Set(varTransition, true)
+            OnSelect: |
+                =Set(varChooseMinute, false);
+                Set(varHourOld, varHourNew)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =36
+            Width: =124
+            X: =34
+            Y: =62
+            ZIndex: =1
+
+        lbl_timColon As label:
+            Align: =Align.Center
+            Font: =cmp_MD_Timepicker.font
+            Height: =80
+            LayoutMinHeight: =70
+            LayoutMinWidth: =560
+            Size: =36
+            Text: |-
+                =":"
+            Width: =24
+            ZIndex: =2
+
+        txt_timMinutes As text:
+            Align: =Align.Center
+            BorderThickness: =0
+            Color: =If(varChooseMinute, cmp_MD_Timepicker.primaryColor, cmp_MD_Timepicker.textColor)
+            Default: =Text(Value(varMinuteNew), "00")
+            Fill: =If(varChooseMinute, ColorValue(cmp_MD_Timepicker.primaryColorHex&"4d"), LightGray)
+            FillPortions: =1
+            FocusedBorderThickness: =0
+            Font: =cmp_MD_Timepicker.font
+            Format: =TextFormat.Number
+            Height: =80
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(cmp_MD_Timepicker.primaryColor, 50%)
+            LayoutMinHeight: =70
+            LayoutMinWidth: =20
+            OnChange: |-
+                =Set(varMinuteOld, varMinuteNew);
+                Set(varMinuteNew, Value(Self.Text));
+                Set(varHourOld, varHourNew);
+                Set(varTransition, false);
+                Set(varTransition, true)
+            OnSelect: |-
+                =Set(varChooseMinute, true);
+                Set(varMinuteOld, varMinuteNew)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =36
+            Width: =124
+            X: =34
+            Y: =62
+            ZIndex: =3
+
+        lbl_timSpacing1 As label:
+            Height: =70
+            LayoutMinHeight: =70
+            LayoutMinWidth: =560
+            Size: =21
+            Text: =""
+            Visible: =cmp_MD_Timepicker.format=12
+            Width: =12
+            ZIndex: =4
+
+        con_AMPM As groupContainer.verticalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =112
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingBottom: =1
+            PaddingLeft: =1
+            PaddingRight: =1
+            PaddingTop: =1
+            Visible: =cmp_MD_Timepicker.format=12
+            Width: =52
+            ZIndex: =5
+
+            btn_timeAM As button:
+                BorderColor: =Self.Color
+                BorderThickness: =1
+                Color: =If(varAMPM=Self.Text, cmp_MD_Timepicker.primaryColor, ColorFade(cmp_MD_Timepicker.textColor, 50%))
+                Fill: =If(varAMPM=Self.Text, ColorFade(cmp_MD_Timepicker.primaryColor, 80%), Transparent)
+                FocusedBorderThickness: =2
+                Font: =cmp_MD_Timepicker.font
+                FontWeight: =FontWeight.Normal
+                Height: =39
+                HoverColor: =cmp_MD_Timepicker.primaryColor
+                HoverFill: =ColorFade(cmp_MD_Timepicker.primaryColor, 50%)
+                LayoutMinHeight: =70
+                LayoutMinWidth: =280
+                OnSelect: =Set(varAMPM, "AM")
+                PressedFill: =ColorFade(cmp_MD_Timepicker.primaryColor, 50%)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =5
+                RadiusTopRight: =5
+                Size: =12
+                Text: ="AM"
+                Visible: =cmp_MD_Timepicker.format=12
+                Width: =Parent.Width-2
+                ZIndex: =1
+
+            btn_timePM As button:
+                BorderColor: =Self.Color
+                BorderThickness: =1
+                Color: =If(varAMPM=Self.Text, cmp_MD_Timepicker.primaryColor, ColorFade(cmp_MD_Timepicker.textColor, 50%))
+                Fill: =If(varAMPM=Self.Text, ColorFade(cmp_MD_Timepicker.primaryColor, 80%), Transparent)
+                FocusedBorderThickness: =2
+                Font: =cmp_MD_Timepicker.font
+                FontWeight: =FontWeight.Normal
+                Height: =39
+                HoverColor: =cmp_MD_Timepicker.primaryColor
+                HoverFill: =ColorFade(cmp_MD_Timepicker.primaryColor, 50%)
+                LayoutMinHeight: =70
+                LayoutMinWidth: =280
+                OnSelect: =Set(varAMPM, "PM")
+                PressedFill: =ColorFade(cmp_MD_Timepicker.primaryColor, 50%)
+                RadiusBottomLeft: =5
+                RadiusBottomRight: =5
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =12
+                Text: ="PM"
+                Visible: =cmp_MD_Timepicker.format=12
+                Width: =Parent.Width-2
+                X: =con_timeSelect.X+btn_timeAM.X
+                Y: =con_timeSelect.Y+btn_timeAM.Height
+                ZIndex: =2
+
+        lb_timSpacing2 As label:
+            Height: =70
+            LayoutMinHeight: =70
+            LayoutMinWidth: =560
+            Size: =21
+            Text: =""
+            Width: =1
+            ZIndex: =6
+
+    cir_clockBG As circle:
+        Fill: =LightGray
+        Height: =256
+        Width: =256
+        X: =(Parent.Width-Self.Width)/2
+        Y: =con_timeSelect.Y+con_timeSelect.Height+36
+        ZIndex: =7
+
+    img_clock As image:
+        Height: =256
+        Image: |-
+            ="data:image/svg+xml;utf8, " & EncodeUrl(
+                "<svg xmlns='http://www.w3.org/2000/svg' viewBox='-256 -256 512 512'>
+            
+            <circle r='10' fill='"&cmp_MD_Timepicker.primaryColorHex&"' />"
+            
+            //Minutes
+            &If(varChooseMinute,"
+            <g>
+            <line x1='0' y1='0' x2='0' y2='-200' stroke-width='2' stroke='"&cmp_MD_Timepicker.primaryColorHex&"' />
+            <circle cy='-200' r='30' fill='"&cmp_MD_Timepicker.primaryColorHex&"' />"
+                &"
+                <animateTransform
+                    attributeName='transform'
+                    type='rotate'
+                    dur='0.2s'
+                    from='"&varMinuteOld/60*360&"'
+                    to='"
+                    //&If(Abs(varMinuteOld-varMinuteNew)>30,varMinuteNew/60*360+360, varMinuteNew/60*360)&"
+                    &varMinuteNew/60*360+If(varMinuteNew>=45&&varMinuteOld<=15, -360, varMinuteOld>=45&&varMinuteNew<=15, 360, 0)&
+                    "'
+                    fill='freeze'
+                    />
+            
+            </g>")
+            
+            //Hours
+            &
+            With({HourOld12: Mod(varHourOld, 12), HourNew12: Mod(varHourNew, 12)},
+            If(!varChooseMinute,
+                "<g>
+                <line x1='0' y1='0' x2='0' stroke-width='2' stroke='"&cmp_MD_Timepicker.primaryColorHex&"' >
+                    <animate
+                        attributeName='y2'
+                        dur='0.2s'
+                        from='"&If(varHourOld>12 || varHourOld=0, -120, -200)&"'
+                        to='"&If(varHourNew>12 || varHourNew=0, -120, -200)&"'
+                        fill='freeze'
+                    />
+                </line>
+            
+                <circle cy='"&If(varHourNew>12 || varHourNew=0, -120, -200)&"' r='30' fill='"&cmp_MD_Timepicker.primaryColorHex&"'>
+                    <animate
+                        attributeName='cy'
+                        dur='0.2s'
+                        from='"&If(varHourOld>12 || varHourOld=0, -120, -200)&"'
+                        to='"&If(varHourNew>12 || varHourNew=0, -120, -200)&"'
+                        fill='freeze'
+                    />    
+                </circle>
+            
+                <animateTransform
+                    attributeName='transform'
+                    type='rotate'
+                    dur='0.2s'
+                    from='"&HourOld12/12*360&"'
+                    to='"
+                    //&If(Abs(varMinuteOld-varMinuteNew)>30,varMinuteNew/60*360+360, varMinuteNew/60*360)&"
+                    &HourNew12/12*360+If(HourNew12>=9&&HourOld12<=3, -360, HourOld12>=9&&HourNew12<=3, 360, 0)&
+                    "'
+                    fill='freeze'
+                    />
+            
+            </g> ")
+            )
+            
+            &Second(Now())
+            
+            &"</svg>"
+            )
+        Width: =256
+        X: =(Parent.Width-Self.Width)/2
+        Y: =con_timeSelect.Y+con_timeSelect.Height+36
+        ZIndex: =8
+
+    gal_clock As gallery.galleryVertical:
+        Height: =256
+        Items: |-
+            =AddColumns(
+                Sequence(If(!varChooseMinute && cmp_MD_Timepicker.format=24, 24, 12), 1, 1),
+                "Degrees", 30*Value,
+                "Rad", 30*Value/180*Pi(),
+                "Hours", If(Value=24, 0,Value),
+                "Minutes", If(Value=12, 0, Value*5)
+            )
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =1
+        Width: =256
+        X: =(Parent.Width-Self.Width)/2
+        Y: =con_timeSelect.Y+con_timeSelect.Height+36
+        ZIndex: =9
+
+        btn_time As button:
+            BorderStyle: =BorderStyle.None
+            Color: |-
+                =If(
+                    !varChooseMinute&&varHourNew=ThisItem.Hours, cmp_MD_Timepicker.backgroundColor,
+                    varChooseMinute&&varMinuteNew=ThisItem.Minutes, cmp_MD_Timepicker.backgroundColor,
+                    cmp_MD_Timepicker.textColor
+                )
+            DisabledColor: =Self.Color
+            DisabledFill: =Self.Fill
+            DisplayMode: |-
+                =If(
+                    !varChooseMinute&&varHourNew=ThisItem.Hours, DisplayMode.Disabled,
+                    varChooseMinute&&varMinuteNew=ThisItem.Minutes, DisplayMode.Disabled,
+                    Edit
+                )
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =0
+            Font: =cmp_MD_Timepicker.font
+            FontWeight: =FontWeight.Normal
+            Height: =30
+            HoverFill: =RGBA(0, 0, 0, 0.5)
+            OnSelect: |-
+                =If(!varChooseMinute,
+                    Set(varHourOld, varHourNew);
+                    Set(varHourNew, Value(ThisItem.Hours));
+                    Set(varMinuteOld, varMinuteNew);
+                    Set(varTransition, false);
+                    Set(varTransition, true),
+                    
+                    Set(varMinuteOld, varMinuteNew);
+                    Set(varMinuteNew, Value(ThisItem.Minutes));
+                    Set(varHourOld, varHourNew);
+                    Set(varTransition, false);
+                    Set(varTransition, true)
+                    );
+                
+                Set(varReset, Now())
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Size: =If(ThisItem.Value>12, 8, 12)
+            TabIndex: =-1
+            Text: |-
+                =If(!varChooseMinute,
+                    ThisItem.Hours,
+                    ThisItem.Minutes
+                )
+            Width: =30
+            X: =Parent.Width/2+Sin(ThisItem.Rad)*If(ThisItem.Value>12, 60, 100)-Self.Height/2
+            Y: =-ThisItem.Value+Parent.Width/2-Self.Height/2-Cos(ThisItem.Rad)*If(ThisItem.Value>12, 60, 100)
+            ZIndex: =1
+
+    tim_hourTransition As timer:
+        AutoPause: =false
+        Duration: =300
+        Height: =70
+        OnTimerEnd: |-
+            =Set(varChooseMinute, !varChooseMinute);
+            Set(varTransition, false)
+        Reset: =!varTransition
+        Start: =varTransition
+        Visible: =false
+        Width: =280
+        X: =39
+        Y: =460
+        ZIndex: =10
+

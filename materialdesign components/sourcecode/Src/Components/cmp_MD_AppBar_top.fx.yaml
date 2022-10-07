@@ -1,0 +1,112 @@
+cmp_MD_AppBar_top As CanvasComponent:
+    appBarTop1Color: |-
+        =ColorValue("#4C00D5")
+    appBarTop2Color: |-
+        =ColorValue("#6200EE")
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =70
+    icon1: |-
+        ="data:image/svg+xml;utf8, "&EncodeUrl("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='"&cmp_MD_AppBar_top.iconColor&"' d='M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z'/>
+        </svg>
+        ")
+    icon2: |-
+        ="data:image/svg+xml;utf8, "&EncodeUrl("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='"&cmp_MD_AppBar_top.iconColor&"' d='M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L15.96,7.19C16.5,7.69 17.21,8 18,8A3,3 0 0,0 21,5A3,3 0 0,0 18,2A3,3 0 0,0 15,5C15,5.24 15.04,5.47 15.09,5.7L8.04,9.81C7.5,9.31 6.79,9 6,9A3,3 0 0,0 3,12A3,3 0 0,0 6,15C6.79,15 7.5,14.69 8.04,14.19L15.16,18.34C15.11,18.55 15.08,18.77 15.08,19C15.08,20.61 16.39,21.91 18,21.91C19.61,21.91 20.92,20.61 20.92,19A2.92,2.92 0 0,0 18,16.08Z' />
+        </svg>
+        ")
+    icon3: |-
+        ="data:image/svg+xml;utf8, "&EncodeUrl("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='"&cmp_MD_AppBar_top.iconColor&"' d='M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z' />
+        </svg>
+        ")
+    icon4: |-
+        ="data:image/svg+xml;utf8, "&EncodeUrl("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='"&cmp_MD_AppBar_top.iconColor&"' d='M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z' />
+        </svg>
+        ")
+    iconColor: |-
+        ="#FFFFFF"
+    mockVisible: =false
+    onSelectContext: =true
+    onselectMenu: =true
+    onSelectSearch: =true
+    onselectShare: =true
+    textColor: =White
+    titleText: ="Photos"
+    Width: =App.DesignWidth
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    HtmlText1 As htmlViewer:
+        Height: =87
+        HtmlText: |-
+            ="<div style='
+            
+            width: "& rect_AppBar2.Width&"px; 
+            height: "& rect_AppBar2.Height&"px; 
+            box-shadow: 2px 2px 3px 3px rgba(0,0,0,0.25); 
+            border-radius: 0px
+            '>
+            </div>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =640
+        ZIndex: =1
+
+    rect_AppBar2 As rectangle:
+        Fill: =cmp_MD_AppBar_top.appBarTop2Color
+        Height: =56
+        Width: =Parent.Width
+        ZIndex: =6
+
+    img_Share As image:
+        Height: =24
+        Image: =cmp_MD_AppBar_top.icon2
+        OnSelect: =cmp_MD_AppBar_top.onselectShare()
+        Width: =24
+        X: =img_Search.X-24-Self.Width
+        Y: =rect_AppBar2.Y+ (rect_AppBar2.Height-Self.Height)/2
+        ZIndex: =7
+
+    img_Hamburger As image:
+        Height: =24
+        Image: =cmp_MD_AppBar_top.icon1
+        OnSelect: =cmp_MD_AppBar_top.onselectMenu()
+        Width: =24
+        X: =36
+        Y: =rect_AppBar2.Y+ (rect_AppBar2.Height-Self.Height)/2
+        ZIndex: =8
+
+    img_Search As image:
+        Height: =24
+        Image: =cmp_MD_AppBar_top.icon3
+        OnSelect: =cmp_MD_AppBar_top.onSelectSearch()
+        Width: =24
+        X: =img_Context.X-24-Self.Width
+        Y: =rect_AppBar2.Y+ (rect_AppBar2.Height-Self.Height)/2
+        ZIndex: =9
+
+    img_Context As image:
+        Height: =24
+        Image: =cmp_MD_AppBar_top.icon4
+        OnSelect: =cmp_MD_AppBar_top.onSelectContext()
+        Width: =24
+        X: =rect_AppBar2.Width-Self.Width-16
+        Y: =rect_AppBar2.Y+ (rect_AppBar2.Height-Self.Height)/2
+        ZIndex: =10
+
+    lbl_title As label:
+        Color: =cmp_MD_AppBar_top.textColor
+        Font: ="Roboto"
+        Height: =rect_AppBar2.Height
+        Size: =21
+        Text: =cmp_MD_AppBar_top.titleText
+        Width: =300
+        X: =img_Hamburger.X + img_Hamburger.Width+32
+        Y: =rect_AppBar2.Y
+        ZIndex: =11
+

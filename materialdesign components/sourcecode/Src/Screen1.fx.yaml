@@ -1,0 +1,4 @@
+Screen1 As screen:
+    Fill: =defaults.elementBackgroundColor
+    Width: =1500
+

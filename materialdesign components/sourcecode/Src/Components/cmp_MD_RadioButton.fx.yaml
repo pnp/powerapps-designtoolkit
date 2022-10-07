@@ -1,0 +1,118 @@
+cmp_MD_RadioButton As CanvasComponent:
+    disabledColor: |-
+        =ColorValue("#a9a9a9")
+    Fill: =Transparent
+    font: ="Roboto"
+    fontColor: =RGBA(0, 0, 0, 1)
+    fontSize: =10
+    fontWeight: ="Normal"
+    galleryContent: |-
+        =Table(
+            {
+                id: 1,
+                title: "pick me"
+            },
+            {
+                id: 2,
+                title: "no, pick me"
+            },
+            {
+                id: 3,
+                title: "for real, pick me!"
+            }
+        )
+    Height: =cmp_MD_RadioButton.outsideMargin*2 + 48*3+20
+    hoverFill: |-
+        =ColorValue("#6200EE4D")
+    iconSize: =20  
+    OnReset: =
+    outsideMargin: =20
+    primaryColor: |-
+        =ColorValue("#6200EE")
+    radiobuttonValue: =Title6.Text
+    Width: =cmp_MD_RadioButton.outsideMargin*2 + cmp_MD_RadioButton.iconSize + 200+10
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    "Gallery4 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+        Height: =0
+        Items: =colItems
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =Min(96, Self.Height - 60)
+        Width: =0
+        Y: =0   
+        ZIndex: =1
+
+        Title6 As label:
+            Height: =0
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.radio
+            VerticalAlign: =VerticalAlign.Top
+            Width: =0
+            ZIndex: =1
+
+    "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =CountRows(Gallery2.AllItems)* Gallery2.TemplateHeight + cmp_MD_RadioButton.outsideMargin*2
+        Items: =cmp_MD_RadioButton.galleryContent
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =48
+        Width: =cmp_MD_RadioButton.Width
+        Y: =cmp_MD_RadioButton.outsideMargin
+        ZIndex: =4
+
+        Circle_inner_1 As circle:
+            BorderColor: =Transparent
+            BorderThickness: =1
+            Fill: =If(Title6.Text = Text(ThisItem.id), cmp_MD_RadioButton.primaryColor, Transparent)
+            Height: =cmp_MD_RadioButton.iconSize-8
+            OnSelect: =Set(isCheck, !isCheck)
+            Width: =cmp_MD_RadioButton.iconSize-8
+            X: =Circle_outer_1.X + (Circle_outer_1.Width-Self.Width)/2
+            Y: =Circle_outer_1.Y+ (Circle_outer_1.Height - Self.Height)/2
+            ZIndex: =6
+
+        Circle_outer_1 As circle:
+            BorderColor: =If(Title6.Text = Text(ThisItem.id), cmp_MD_RadioButton.primaryColor, cmp_MD_RadioButton.disabledColor)
+            BorderThickness: =1
+            Fill: =Transparent
+            Height: =cmp_MD_RadioButton.iconSize
+            Width: =cmp_MD_RadioButton.iconSize
+            X: =5
+            Y: =(Parent.TemplateHeight-Self.Height)/2
+            ZIndex: =7
+
+        Checkbox2 As checkbox:
+            BorderStyle: =BorderStyle.None
+            CheckboxSize: =0
+            Height: =44
+            OnCheck: |-
+                =ClearCollect(colItems, {radio: ThisItem.id});
+            OnSelect: =Select(Parent)
+            OnUncheck: |-
+                =Clear(
+                    colItems
+                )
+            Reset: =true
+            Size: =21
+            Text: =""
+            Width: =35
+            Y: =4
+            ZIndex: =9
+
+        Label4_1 As label:
+            Font: =cmp_MD_RadioButton.font
+            FontWeight: =cmp_MD_RadioButton.fontWeight
+            Size: =cmp_MD_RadioButton.fontSize
+            Text: =ThisItem.title
+            Width: =235
+            X: =Circle_outer_1.X + Circle_outer_1.Width + 10
+            Y: =Circle_outer_1.Y+ (Circle_outer_1.Height - Self. Height)/2
+            ZIndex: =10
+

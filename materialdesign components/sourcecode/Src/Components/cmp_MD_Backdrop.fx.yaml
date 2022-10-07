@@ -1,0 +1,333 @@
+cmp_MD_Backdrop As CanvasComponent:
+    accentColor: |-
+        =ColorValue("#6200EE")
+    appBarTop1Color: |-
+        =ColorValue("#4C00D5")
+    borderRadius: =4
+    duration: =250
+    Fill: =cmp_MD_Backdrop.accentColor
+    font: ="Roboto"
+    fontSizeGallery: =12
+    fontSizeTitle: =21
+    fontWeightGallery: ="Text"
+    fontWeightTitle: ="Normal"
+    galleryContent: |-
+        =Table(
+            {
+                id: 1,
+                icon: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='" & cmp_MD_Backdrop.iconColor & "' d='M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M15,18V16H6V18H15M18,14V12H6V14H18Z' />
+        </svg>
+        
+        "
+                ),
+                title: "Documents"
+            },
+            {
+                id: 2,
+                icon: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='" & cmp_MD_Backdrop.iconColor & "' d='M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z' />
+        </svg>
+        
+        "
+                ),
+                title: "Calendar"
+            },
+            {
+                id: 3,
+                icon: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "
+        
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='" & cmp_MD_Backdrop.iconColor & "' d='M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z' />
+        </svg>
+        
+        "
+                ),
+                title: "People"
+            },
+            {
+                id: 4,
+                icon: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "
+        
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='" & cmp_MD_Backdrop.iconColor & "' d='M20.56 3.91C21.15 4.5 21.15 5.45 20.56 6.03L16.67 9.92L18.79 19.11L17.38 20.53L13.5 13.1L9.6 17L9.96 19.47L8.89 20.53L7.13 17.35L3.94 15.58L5 14.5L7.5 14.87L11.37 11L3.94 7.09L5.36 5.68L14.55 7.8L18.44 3.91C19 3.33 20 3.33 20.56 3.91Z' />
+        </svg>
+        
+        "
+                ),
+                title: "Flights"
+            },
+                {
+                id: 4,
+                icon: "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "
+        
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='" & cmp_MD_Backdrop.iconColor & "' d='M11,14C12,14 13.05,14.16 14.2,14.44C13.39,15.31 13,16.33 13,17.5C13,18.39 13.25,19.23 13.78,20H3V18C3,16.81 3.91,15.85 5.74,15.12C7.57,14.38 9.33,14 11,14M11,12C9.92,12 9,11.61 8.18,10.83C7.38,10.05 7,9.11 7,8C7,6.92 7.38,6 8.18,5.18C9,4.38 9.92,4 11,4C12.11,4 13.05,4.38 13.83,5.18C14.61,6 15,6.92 15,8C15,9.11 14.61,10.05 13.83,10.83C13.05,11.61 12.11,12 11,12M18.5,10H20L22,10V12H20V17.5A2.5,2.5 0 0,1 17.5,20A2.5,2.5 0 0,1 15,17.5A2.5,2.5 0 0,1 17.5,15C17.86,15 18.19,15.07 18.5,15.21V10Z' />
+        </svg>
+        
+        "
+                ),
+                title: "Music"
+            }, 
+        
+             {
+                id: 5,
+                icon: "data:image/svg+xml;utf8, "&EncodeUrl("
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='" & cmp_MD_Backdrop.iconColor & "' d='M10 4A4 4 0 0 0 6 8A4 4 0 0 0 10 12A4 4 0 0 0 14 8A4 4 0 0 0 10 4M17 12C16.87 12 16.76 12.09 16.74 12.21L16.55 13.53C16.25 13.66 15.96 13.82 15.7 14L14.46 13.5C14.35 13.5 14.22 13.5 14.15 13.63L13.15 15.36C13.09 15.47 13.11 15.6 13.21 15.68L14.27 16.5C14.25 16.67 14.24 16.83 14.24 17C14.24 17.17 14.25 17.33 14.27 17.5L13.21 18.32C13.12 18.4 13.09 18.53 13.15 18.64L14.15 20.37C14.21 20.5 14.34 20.5 14.46 20.5L15.7 20C15.96 20.18 16.24 20.35 16.55 20.47L16.74 21.79C16.76 21.91 16.86 22 17 22H19C19.11 22 19.22 21.91 19.24 21.79L19.43 20.47C19.73 20.34 20 20.18 20.27 20L21.5 20.5C21.63 20.5 21.76 20.5 21.83 20.37L22.83 18.64C22.89 18.53 22.86 18.4 22.77 18.32L21.7 17.5C21.72 17.33 21.74 17.17 21.74 17C21.74 16.83 21.73 16.67 21.7 16.5L22.76 15.68C22.85 15.6 22.88 15.47 22.82 15.36L21.82 13.63C21.76 13.5 21.63 13.5 21.5 13.5L20.27 14C20 13.82 19.73 13.65 19.42 13.53L19.23 12.21C19.22 12.09 19.11 12 19 12H17M10 14C5.58 14 2 15.79 2 18V20H11.68A7 7 0 0 1 11 17A7 7 0 0 1 11.64 14.09C11.11 14.03 10.56 14 10 14M18 15.5C18.83 15.5 19.5 16.17 19.5 17C19.5 17.83 18.83 18.5 18 18.5C17.16 18.5 16.5 17.83 16.5 17C16.5 16.17 17.17 15.5 18 15.5Z' />
+        </svg>
+        
+        "),
+                title: "Edit personal data"
+            }
+        )
+    Height: =App.DesignHeight
+    icon1: |-
+        ="data:image/svg+xml;utf8, "&EncodeUrl("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='"&cmp_MD_Backdrop.iconColor&"' d='M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z'/>
+        </svg>
+        ")
+    icon2: |-
+        ="data:image/svg+xml;utf8, "&EncodeUrl("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='"&cmp_MD_Backdrop.iconColor&"' d='M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L15.96,7.19C16.5,7.69 17.21,8 18,8A3,3 0 0,0 21,5A3,3 0 0,0 18,2A3,3 0 0,0 15,5C15,5.24 15.04,5.47 15.09,5.7L8.04,9.81C7.5,9.31 6.79,9 6,9A3,3 0 0,0 3,12A3,3 0 0,0 6,15C6.79,15 7.5,14.69 8.04,14.19L15.16,18.34C15.11,18.55 15.08,18.77 15.08,19C15.08,20.61 16.39,21.91 18,21.91C19.61,21.91 20.92,20.61 20.92,19A2.92,2.92 0 0,0 18,16.08Z' />
+        </svg>
+        ")
+    icon3: |-
+        ="data:image/svg+xml;utf8, "&EncodeUrl("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='"&cmp_MD_Backdrop.iconColor&"' d='M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z' />
+        </svg>
+        ")
+    icon4: |-
+        ="data:image/svg+xml;utf8, "&EncodeUrl("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='"&cmp_MD_Backdrop.iconColor&"' d='M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z' />
+        </svg>
+        ")
+    icon5: |-
+        ="data:image/svg+xml;utf8, "&EncodeUrl("
+        
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+           <path fill='" & cmp_MD_Backdrop.iconColor & "' d='M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z' />
+        </svg>
+        
+        ")
+    iconColor: |-
+        ="#FFFFFF"
+    iconsize: =24
+    isDebugMode: =true
+    mockVisible: |
+        =true
+    OnReset: |-
+        =Set(
+            cmpIconColor,
+            Match(
+                JSON(
+                    cmp_MD_Backdrop.textColor,
+                    JSONFormat.IgnoreUnsupportedTypes
+                ),
+                "#[a-fA-F0-9]{6}"
+            ).FullMatch
+        )
+    onSelectContext: =true
+    onselectMenu: =true
+    paddingLeftGallery: =100
+    paddingLeftTitle: =100
+    secondaryColor: =RGBA(135, 61, 242, 0.5)
+    selectedItem: =gal_Main_1.Selected.id
+    textColor: |-
+        =ColorValue("#ffffff")
+    titleText: ="Apps"
+    Width: =App.DesignWidth
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    grp_AppBar2_2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =14
+
+        rect_AppBar2_2 As rectangle:
+            Fill: =Transparent
+            Height: =56
+            Width: =Parent.Width
+            ZIndex: =5
+
+        img_Hamburger_2 As image:
+            AccessibleLabel: ="HamburgerMenu"
+            Height: =Self.Width
+            Image: |-
+                ="data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+                   <path fill='" & cmp_MD_Backdrop.iconColor & "' d='M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z' />
+                </svg>"
+                )
+            OnSelect: |-
+                =Set(isFrontLayerVisible, false); Set(startFrontLayer, false); 
+                //Set(isExpand, !isExpand)
+            Width: =cmp_MD_Backdrop.iconsize
+            X: =16
+            Y: =rect_AppBar2_2.Y+ (rect_AppBar2_2.Height-Self.Height)/2
+            ZIndex: =6
+
+        lbl_Title_2 As label:
+            Color: =cmp_MD_Backdrop.textColor
+            Font: =cmp_MD_Backdrop.font
+            FontWeight: =cmp_MD_Backdrop.fontWeightGallery
+            Height: =rect_AppBar2_2.Height
+            Role: =TextRole.Heading1
+            Size: =cmp_MD_Backdrop.fontSizeTitle
+            Text: =cmp_MD_Backdrop.titleText
+            Width: =300
+            X: =img_Hamburger_2.X + img_Hamburger_2.Width+32
+            Y: =rect_AppBar2_2.Y
+            ZIndex: =7
+
+        img_Context_2 As image:
+            AccessibleLabel: ="KebabMenu"
+            Height: =cmp_MD_Backdrop.iconsize
+            Image: =cmp_MD_Backdrop.icon4
+            OnSelect: =cmp_MD_Backdrop.onSelectContext()
+            Width: =cmp_MD_Backdrop.iconsize
+            X: =rect_AppBar2_2.Width-Self.Width-16
+            Y: =rect_AppBar2_2.Y+ (rect_AppBar2_2.Height-Self.Height)/2
+            ZIndex: =8
+
+    ctn_Nav As groupContainer.manualLayoutContainer:
+        Height: =gal_Main_1.Height
+        Visible: =!isFrontLayerVisible
+        Width: |-
+            =//If(isExpand, Parent.Width, Button1_2.PaddingLeft)
+            Parent.Width
+        ZIndex: =26
+
+        "gal_Main_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+            Height: =CountRows(gal_Main_1.AllItems) * (gal_Main_1.TemplateHeight+ gal_Main_1.TemplatePadding)
+            Items: =cmp_MD_Backdrop.galleryContent
+            Layout: =Layout.Vertical
+            TemplatePadding: =0
+            TemplateSize: =40
+            Visible: =!isFrontLayerVisible
+            Width: =Parent.Width
+            Y: =55
+            ZIndex: =1
+
+            Title1_1 As label:
+                Color: =cmp_MD_Backdrop.textColor
+                Font: ="Roboto"
+                FontWeight: =FontWeight.Normal
+                Height: =Parent.TemplateHeight
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =Image2_1.Width+24+6
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =14
+                Text: =ThisItem.title
+                Visible: =false
+                Width: =Parent.Width
+                ZIndex: =1
+
+            Button1_2 As button:
+                Align: =Align.Left
+                BorderColor: =Transparent
+                Fill: =Transparent
+                Font: =cmp_MD_Backdrop.font
+                FontWeight: =cmp_MD_Backdrop.fontWeightGallery
+                Height: =Parent.TemplateHeight-4
+                HoverFill: =cmp_MD_Backdrop.secondaryColor
+                OnSelect: =Set(isFrontLayerVisible, true); Set(startFrontLayer, true)
+                PaddingLeft: =Image2_1.Width+24+6+16
+                PressedColor: =Self.Color
+                PressedFill: =Self.HoverFill
+                RadiusBottomLeft: =cmp_MD_Backdrop.borderRadius
+                RadiusBottomRight: =cmp_MD_Backdrop.borderRadius
+                RadiusTopLeft: =cmp_MD_Backdrop.borderRadius
+                RadiusTopRight: =cmp_MD_Backdrop.borderRadius
+                Size: =cmp_MD_Backdrop.fontSizeGallery
+                Text: =ThisItem.title
+                Width: =Parent.Width
+                ZIndex: =2
+
+            Image2_1 As image:
+                AccessibleLabel: =ThisItem.title
+                Height: =cmp_MD_Backdrop.iconsize
+                Image: =ThisItem.icon
+                OnSelect: =Set(isFrontLayerVisible, true); Set(startFrontLayer, true)
+                Width: =cmp_MD_Backdrop.iconsize
+                X: =16
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =3
+
+    grp_FrontLayer As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =26
+
+        btn_FrontLayer_1 As button:
+            BorderColor: =Transparent
+            DisplayMode: =DisplayMode.View
+            Fill: =cmp_MD_Backdrop.textColor
+            Height: =Parent.Height-Self.Y
+            HoverFill: =Self.Fill
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =25
+            RadiusTopRight: =25
+            Size: =24
+            Text: =""
+            Visible: =isFrontLayerVisible
+            Width: =Parent.Width
+            Y: |
+                =
+                If(!cmp_MD_Backdrop.isDebugMode,App.DesignHeight-60 - 900*(Timer1_1.Value / Timer1_1.Duration), 60)
+            ZIndex: =9
+
+        lbl_SubTitle_1 As label:
+            Color: =ColorFade(Black, 40%)
+            Font: ="Roboto"
+            Height: =32
+            Size: =12
+            Text: =gal_Main_1.Selected.title
+            Visible: =isFrontLayerVisible
+            Width: =145
+            X: =btn_FrontLayer_1.X+16
+            Y: =btn_FrontLayer_1.Y+16
+            ZIndex: =10
+
+        Timer1_1 As timer:
+            Duration: =cmp_MD_Backdrop.duration
+            Height: =70
+            Start: =startFrontLayer
+            Visible: =false
+            Width: =280
+            X: =360
+            Y: =60
+            ZIndex: =13
+
+        Rectangle2_2 As rectangle:
+            Fill: =ColorFade(DarkGray, 50%)
+            Height: =1
+            Visible: =isFrontLayerVisible
+            Width: =Parent.Width-32
+            X: =16
+            Y: =btn_FrontLayer_1.Y+60
+            ZIndex: =14
+
+        Container1_1 As groupContainer.manualLayoutContainer:
+            Height: =Parent.Height - Rectangle2_2.Y
+            Visible: =isFrontLayerVisible
+            Width: =Parent.Width
+            Y: =Rectangle2_2.Y*Rectangle2_2.Height
+            ZIndex: =25
+

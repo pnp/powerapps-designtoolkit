@@ -1,0 +1,71 @@
+cmp_MD_SideSheet As CanvasComponent:
+    backgroundColor: =White
+    Fill: =cmp_MD_SideSheet.backgroundColor
+    font: ="Roboto"
+    fontSize: =14
+    fontWeight: ="Semibold"
+    Height: =App.DesignHeight
+    iconSize: =24
+    onClose: =true
+    outsideMargin: =20
+    textColor: |-
+        =ColorValue("#1A1919")
+    title: ="Heading"
+    Width: =320 + cmp_MD_SideSheet.outsideMargin*2
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    HtmlText2 As htmlViewer:
+        Height: =1136
+        HtmlText: |-
+            ="<div style='
+            width: 4px; 
+            height: "& Parent.Height-1&"px; 
+            box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.25);
+            border-radius: 0px
+            '>
+            </div>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =16
+        ZIndex: =2
+
+    lbl_heading As label:
+        Color: =cmp_MD_SideSheet.textColor
+        Font: =cmp_MD_SideSheet.font
+        FontWeight: =cmp_MD_SideSheet.fontWeight
+        Height: =70
+        Role: =TextRole.Heading1
+        Size: =cmp_MD_SideSheet.fontSize
+        Text: =cmp_MD_SideSheet.title
+        VerticalAlign: =VerticalAlign.Bottom
+        Width: =342
+        X: =16
+        Y: =40
+        ZIndex: =3
+
+    img_Close As image:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Height: =cmp_MD_SideSheet.iconSize
+        Image: |-
+            =    "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+               <path fill='#1A1919' d='M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z' />
+            </svg>"
+                )
+        OnSelect: =cmp_MD_SideSheet.onClose()
+        Width: =cmp_MD_SideSheet.iconSize
+        X: =Parent.Width-Self.Width-10
+        Y: =10
+        ZIndex: =4
+
+    Container3_1 As groupContainer.manualLayoutContainer:
+        Height: =App.DesignHeight-lbl_heading.Y
+        Width: =Parent.Width-16
+        X: =16
+        Y: =lbl_heading.Y + lbl_heading.Height
+        ZIndex: =5
+

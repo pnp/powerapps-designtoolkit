@@ -1,0 +1,79 @@
+Snackbar As screen:
+    OnVisible: |-
+        =Reset(Button_5);
+        Reset(Button_9)
+
+    Rectangle1_2 As rectangle:
+        Fill: =Gray
+        Width: =640
+        Y: =1036
+        ZIndex: =2
+
+    Container1 As groupContainer.manualLayoutContainer:
+        Fill: =White
+        Height: =Parent.Height-Self.Y-Rectangle1_2.Height
+        Width: =Parent.Width
+        Y: =cmp_MD_Banner_1.yPosition+cmp_MD_Banner_1.Height
+        ZIndex: =3
+
+        Button_5 As cmp_MD_Button:
+            backgroundColor: =Parent.Fill
+            borderRadius: =100
+            buttonText: ="SNACKBAR"
+            displayMode: =Edit
+            Height: =142
+            iconSize: =0.7
+            onSelect: =Set(varSnackbar, !varSnackbar)
+            svgIcon: |-
+                ="<svg xmlns=""http://www.w3.org/2000/svg"" height=""48"" width=""48""><path d=""m16.15 37.75 7.85-4.7 7.85 4.75-2.1-8.9 6.9-6-9.1-.8L24 13.7l-3.55 8.35-9.1.8 6.9 6ZM11.65 44l3.25-14.05L4 20.5l14.4-1.25L24 6l5.6 13.25L44 20.5l-10.9 9.45L36.35 44 24 36.55ZM24 26.25Z""/></svg>"
+            Width: =629
+            X: =11
+            Y: =341
+            ZIndex: =2
+
+        Button_9 As cmp_MD_Button:
+            backgroundColor: =Parent.Fill
+            borderRadius: =100
+            boxShadow: =false
+            buttonText: ="BANNER"
+            disabledColor: =RGBA(116, 116, 116, 1)
+            displayMode: =Edit
+            Height: =136
+            iconSize: =0.5
+            onSelect: =Set(varBanner, !varBanner)
+            outlinedButton: =true
+            svgIcon: |-
+                ="<svg xmlns=""http://www.w3.org/2000/svg"" height=""48"" width=""48""><path d=""M15.8 14v-3h16.4v3ZM13 46q-1.2 0-2.1-.9-.9-.9-.9-2.1V5q0-1.2.9-2.1.9-.9 2.1-.9h22q1.2 0 2.1.9.9.9.9 2.1v38q0 1.2-.9 2.1-.9.9-2.1.9Zm0-4.5V43h22v-1.5Zm0-3h22v-29H13Zm0-32h22V5H13Zm0 0V5v1.5Zm0 35V43Z""/></svg>"
+            Width: =630
+            X: =10
+            Y: =205
+            ZIndex: =3
+
+    cmp_MD_Banner_1 As cmp_MD_Banner:
+        action1OnSelect: =Set(varBanner, false);
+        action2OnSelect: |-
+            =Set(varSnackbar, !varSnackbar);
+            Set(varBanner, false)
+        actionBeneath: =true
+        Height: =217
+        text: ="Ooops, that didn't work Ooops, that didn't workOoops, that didn't workOoops, that didn't workOoops, that didn't workOoops, that didn't workOoops, that didn't work"
+        timerStart: =varBanner
+        twoButtons: =false
+        Visible: =varBanner
+        Width: =Parent.Width
+        ZIndex: =4
+
+    cmp_Snackbar_1 As cmp_MD_Snackbar:
+        actionOnSelect: =Set(varSnackbar, false)
+        borderRadius: =10
+        duration: =5000
+        Height: =230
+        onHide: =Set(varSnackbar, false)
+        outsideMargin: =50
+        text: ="This is the Snackbar Text, the user just did something."
+        timerStart: =varSnackbar
+        Visible: =varSnackbar
+        Width: =Parent.Width
+        Y: =806
+        ZIndex: =6
+
