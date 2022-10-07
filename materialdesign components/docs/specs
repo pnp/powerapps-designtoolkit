@@ -1,0 +1,49 @@
+# Specs
+
+## Custom properties
+
+### applicable to all components
+
+- primaryColor
+- secondaryColor
+- accentColor
+- iconColor
+- textColor
+- backgroundColor
+- font
+- fontSize
+- fontWeight
+
+### applicable to some components
+
+- borderRadius
+- dropShadow (bool)
+- svgIcon
+- centerText
+- outsideMargin
+- borderThickness
+- transitionTime
+- duration
+
+## standard specs
+
+- reference Box Shadow: `"box-shadow: 2px 2px 3px 3px rgba(0,0,0,0.5);`
+- FocusedBorderThickness: 1.5x Border thickness - Min 2
+- FocusedBorderColor: ColorFade(MainColor, -30%)
+- Accessible Label - `Self.Text`
+- no Tooltips
+
+## some other ideas
+
+- provide as many properties as necessary and as little as possible
+- sort properties by importance (and the same way on each component)
+- usage of MD Iconography, i.e. here: https://materialdesignicons.com/
+- create easy way to download svg-code / preview icons (probably another app)
+- configure icons, so they can be copy&pasted from SVG code to the property
+- only use built in colors, calculate Hex colors inside components if needed (svg/html)
+- create a dope ready to go example app, which shows all the ideas
+- make everything as responsive as possible
+
+## tbd
+
+- no usage of built-in scroll bar (actually not sure, looks / feels better but can't click stuff) 💡 idea: instead of making an invisible slider we can create our own scrollbar cpm
