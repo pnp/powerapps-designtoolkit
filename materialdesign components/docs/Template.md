@@ -35,7 +35,15 @@ New controls and components from the library should automatically match your spe
 * The first part of the `OnStart`-property is where you input the colors and settings you want to use. Some colors are calculated again in Hex-code to style the SVG-icons. You can use them inside html-Controls or svg-Images.
 * You can introduce different themes like high contrast or dark mode and let the user choose which one they want to use (see examples)
 
+## Known limitations
 
+* When creating/editing components inside the template you have to enable to access App scope, otherwise all element properties throw errors
+
+## Version
+
+| Version | description |
+| --- | --- |
+| 1.0.0 | First version |
 
 ## Reference and credit
 

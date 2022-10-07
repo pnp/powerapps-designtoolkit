@@ -1,4 +1,4 @@
-# Specs
+# Navigation Drawer
 
 ## Description
 
@@ -17,14 +17,23 @@ An expandable sidebar with your menu items, that can be repeated on every screen
 | navigate | `bool` to control if a click on the menu items navigate to a specified screen |
 | onSelect | Everything else that should happen on the click of the menu item, best used with `Switch(ThisItem.id, 1, FirstButtonOnSelectAction, 2, ...)` |
 
-### Tips and Tricks
+## Tips and Tricks
 
 * The top bar in the example with the button to expand/retract is not part of the component
 * if you want to use the `topMargin` only in expanded mode, look at the demo app how it is set up, don't hesitate to directly add it to your version of the component
 * you can also add a section with options beneath the navigation items (see the reference link for examples)
 * get creative!
 
+## Known limitations
 
-### Reference
+None
+
+## Version
+
+| Version | description |
+| --- | --- |
+| 1.0.0 | First version |
+
+## Reference
 
 https://material.io/components/navigation-drawer
