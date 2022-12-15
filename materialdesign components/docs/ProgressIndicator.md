@@ -5,6 +5,7 @@
 The Progress indicator expresses an unspecified wait time.
 
 ## Demo
+
 ![ProgressIndicator](../assets/cmp_MD_progressindicator.gif)
 
 ## Custom properties

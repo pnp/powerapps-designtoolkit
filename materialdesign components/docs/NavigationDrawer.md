@@ -5,6 +5,7 @@
 An expandable sidebar with your menu items, that can be repeated on every screen. If retracted only the icons show
 
 ## Demo
+
 ![Navigation Drawer](../assets/cmp_MD_navigationdrawer.gif)
 
 ## Custom properties

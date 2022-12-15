@@ -2,9 +2,10 @@
 
 ## Description
 
-THE BUTTON - An element you will use in every app. While the standard PowerApps button has a lot of styling options this one cuts it down to only a few, letting you quickly add an SVG image to the button or Display it as an outline button.
+THE BUTTON - An element you will use in every app. While the standard Power Apps button has a lot of styling options this one cuts it down to only a few, letting you quickly add an SVG image to the button or display it as an outline button.
 
 ## Demo
+
 ![Button](../assets/cmp_MD_button_examples.png)
 
 ## Custom properties
@@ -21,7 +22,7 @@ THE BUTTON - An element you will use in every app. While the standard PowerApps 
 | svgIcon | `string` but in svg-code from `<svg> to </svg>` or `null` - use every svg, without setting the fill properties, it will automatically add color, if you put nothing in there it will automatically center the text |
 | iconSize | `float` (use something between 0.5-0.9) size of the icon in relation to the button height |
 | align | `Align.Left` or `Align.Center` aligns the icon + text - you probably want to only use `Align.Left` if you have multiple buttons with icons underneath each other |
-| adjustPaddingLeft | `int` in px - use to adjust, if Icon&Text are off-center. You can use negative numbers to move everything left |
+| adjustPaddingLeft | `int` in px - use to adjust, if Icon & Text are off-center. You can use negative numbers to move everything left |
 
 ## Tips and Tricks
 

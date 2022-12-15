@@ -2,8 +2,6 @@
 
 positive implications
 
-<!-- TODO elaborate -->
-
 - less friction
 - looks coherent
 - works harmoniously
@@ -21,7 +19,3 @@ how consistent things look
 - typography
 - image style
 - UI elements (buttons, checkboxes, dropdowns, navigation, cards, etc)
-
-## Functional Design consistency
-
-how consistent things work

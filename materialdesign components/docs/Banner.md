@@ -5,6 +5,7 @@
 A banner displays an important, succinct message, and provides actions for users to address (or dismiss the banner). It requires a user action to be dismissed.
 
 ## Demo
+
 ![Banner](../assets/cmp_MD_banner.gif)
 
 ## Custom properties

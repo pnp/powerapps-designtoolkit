@@ -5,6 +5,7 @@
 THE BUTTON - An element you will use in every app. While the standard PowerApps button has a lot of styling options this one cuts it down to only a few, letting you quickly add an SVG image to the button or Display it as an outline button.
 
 ## Demo
+
 ![Button](../assets/cmp_MD_button_examples.png)
 
 ## Custom properties

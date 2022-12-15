@@ -15,10 +15,17 @@ Objective is to make it easier for makers to build design-consistent, performant
 We collected information on our main design goals:
 
 - [accessibility](docs/accessibility.md)
-- [better coding practices](docs/better-coding-practices.md)
 - [design consistency](docs/design-consistency.md)
 
-## Overview of different component libraries
+## Overview of component libraries
 
-- [light component library](light%20components)
 - [materialdesign component library](materialdesign%20components)
+  - [banner](materialdesign%20components/docs/Banner.md)
+  - [Button](materialdesign%20components/docs/Button.md)
+  - [Contrast Checker](materialdesign%20components/docs/ContrastChecker.md)
+  - [Dialog](materialdesign%20components/docs/Dialog.md)
+  - [NavigationDrawer](materialdesign%20components/docs/NavigationDrawer.md)
+  - [ProgressIndicator](materialdesign%20components/docs/ProgressIndicator.md)
+  - [Slider](materialdesign%20components/docs/Slider_tbdRobin.md)
+  - [Snackbar](materialdesign%20components/docs/Snackbar.md)
+
