@@ -6,7 +6,7 @@ Objective is to make it easier for makers to build design-consistent, performant
 
 - Curated high-quality component-libraries providing you with a complete set of UI elements ready to be used in your own canvas apps
 - Guidance on good design practices to advance your own development skills
-- Inspiration on different UI systems and show the *art of possible*
+- Inspiration on different UI systems and show the *Art of possible*
 
 ## Why does it matter?
 
@@ -14,18 +14,17 @@ Objective is to make it easier for makers to build design-consistent, performant
 
 We collected information on our main design goals:
 
-- [accessibility](docs/accessibility.md)
-- [design consistency](docs/design-consistency.md)
+- [Accessibility](docs/accessibility.md)
+- [Design consistency](docs/design-consistency.md)
 
 ## Overview of component libraries
 
-- [materialdesign component library](materialdesign%20components)
-  - [banner](materialdesign%20components/docs/Banner.md)
+- [Material Design component library](materialdesign%20components/../materialdesign%20components/intro.md) - built by [Luise Freese](https://tiwtter.com/LuiseFreese) | @LuiseFreese and [Robin Rosengrün](https://twitter.com/power_r2) |@power_r2
+  - [Banner](materialdesign%20components/docs/Banner.md)
   - [Button](materialdesign%20components/docs/Button.md)
   - [Contrast Checker](materialdesign%20components/docs/ContrastChecker.md)
   - [Dialog](materialdesign%20components/docs/Dialog.md)
-  - [NavigationDrawer](materialdesign%20components/docs/NavigationDrawer.md)
-  - [ProgressIndicator](materialdesign%20components/docs/ProgressIndicator.md)
+  - [Navigation Drawer](materialdesign%20components/docs/NavigationDrawer.md)
+  - [Progress Indicator](materialdesign%20components/docs/ProgressIndicator.md)
   - [Slider](materialdesign%20components/docs/Slider_tbdRobin.md)
   - [Snackbar](materialdesign%20components/docs/Snackbar.md)
-

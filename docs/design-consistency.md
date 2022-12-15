@@ -1,6 +1,6 @@
-# Design consistency
+# Design Consistency
 
-positive implications
+## positive implications
 
 - less friction
 - looks coherent
@@ -11,11 +11,15 @@ positive implications
 - improves DevX
 - enhances reusability
 
+Overall, design consistency help people using software intuitively.
+
 ## Visual Design consistency
 
-how consistent things look
+is achieved by matching
 
 - colors
 - typography
-- image style
-- UI elements (buttons, checkboxes, dropdowns, navigation, cards, etc)
+- image styles
+- UI elements
+
+and more.
