@@ -25,11 +25,12 @@ UI Toolkit for Microsoft Power Apps that aims to represent the look & feel of [G
 
 Video explaining the setup process is following soon!
 
-1. import [Solution file](docs/AppBarTop.md) to all environments you want to develop canvas apps using the components
-2. download [template file](docs/AppBarTop.md)
-3. open msapp-template-file (create -> dataverse -> open -> select file)
-4. change the `OnStart`-properties to match your company branding
-5. build stunning apps in no time
+1. import [Solution file](solution/MaterialDesignComponentLibrary_1_0_0_3.zip) to all environments you want to develop canvas apps using the components
+2. download [template file](solution/MaterialDesignTemplate.msapp)
+3. read documentation of the [template](docs/Template.md)
+4. open msapp-template-file (create -> dataverse -> open -> select file)
+5. change the `OnStart`-properties to match your company branding
+6. build stunning apps in no time!
 
 ## Reference app
 
