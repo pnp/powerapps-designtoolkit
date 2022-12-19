@@ -32,7 +32,7 @@ Mobile time pickers are displayed in dialogs and can be used to select hours, mi
 
 ## Known limitations
 
-None
+* none
 
 ## Version
 
@@ -42,4 +42,4 @@ None
 
 ## Reference
 
-https://material.io/components/time-pickers
+https://m2.material.io/components/time-pickers

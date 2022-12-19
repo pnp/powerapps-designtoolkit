@@ -20,7 +20,7 @@ THE BUTTON - An element you will use in every app. While the standard Power Apps
 | borderThickness | `int` in px - border thickness of the button - important on outline buttons |
 | buttonText | `string` text on the Button, Material Design suggests to use CAPITAL LETTERS for buttons (we didn't force it by default), if you put nothing in there it will automatically center the icon |
 | svgIcon | `string` but in svg-code from `<svg> to </svg>` or `null` - use every svg, without setting the fill properties, it will automatically add color, if you put nothing in there it will automatically center the text |
-| iconSize | `float` (use something between 0.5-0.9) size of the icon in relation to the button height |
+| iconSize | `int` in px, size of the icon |
 | align | `Align.Left` or `Align.Center` aligns the icon + text - you probably want to only use `Align.Left` if you have multiple buttons with icons underneath each other |
 | adjustPaddingLeft | `int` in px - use to adjust, if Icon & Text are off-center. You can use negative numbers to move everything left |
 
@@ -33,7 +33,6 @@ THE BUTTON - An element you will use in every app. While the standard Power Apps
 
 ## Known limitations
 
-* sometimes the centering is off, use `adjustPaddingLeft` to manually adjust
 * colors on the icon won't work for borders of svg elements, but most icons aren't built on that, make sure to not use any fill properties inside the svg
 
 ## Version
@@ -44,4 +43,4 @@ THE BUTTON - An element you will use in every app. While the standard Power Apps
 
 ## Reference
 
-https://material.io/components/buttons
+https://m2.material.io/components/buttons

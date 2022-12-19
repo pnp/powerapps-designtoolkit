@@ -37,4 +37,4 @@ Because the labels and therefore height of the inner container (the actual dialo
 
 ## Reference
 
-https://material.io/components/dialogs
+https://m2.material.io/components/dialogs

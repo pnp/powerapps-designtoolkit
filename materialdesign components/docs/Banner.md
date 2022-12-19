@@ -44,4 +44,4 @@ none
 
 ## Reference
 
-https://material.io/components/banners
+https://m2.material.io/components/banners

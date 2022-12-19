@@ -37,4 +37,4 @@ None
 
 ## Reference
 
-https://material.io/components/navigation-drawer
+https://m2.material.io/components/navigation-drawer

@@ -33,7 +33,7 @@ Snackbars inform users of a process that an app has performed or will perform. T
 
 ## Known limitations
 
-None
+* none
 
 ## Version
 
@@ -43,4 +43,4 @@ None
 
 ## Reference
 
-https://material.io/components/snackbars
+https://m2.material.io/components/snackbars

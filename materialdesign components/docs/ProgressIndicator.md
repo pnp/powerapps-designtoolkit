@@ -32,4 +32,4 @@ None
 
 ## Reference
 
-https://material.io/components/progress-indicators
+https://m2.material.io/components/progress-indicators
