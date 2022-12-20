@@ -30,7 +30,7 @@ We collected information on our main design goals:
   - [Generic Input Frame](materialdesign%20components/docs/GerenericInputFrame.md)
   - [Navigation Drawer](materialdesign%20components/docs/NavigationDrawer.md)
   - [Progress Indicator](materialdesign%20components/docs/ProgressIndicator.md)
-  - [Side Sheet](materialdesign%20components/docs/SideSheet.md))
+  - [Side Sheet](materialdesign%20components/docs/SideSheet.md)
   - [Slider](materialdesign%20components/docs/Slider.md)
   - [Snackbar](materialdesign%20components/docs/Snackbar.md)
   - [TextInput](materialdesign%20components/docs/Textinput.md)
