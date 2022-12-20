@@ -15,7 +15,7 @@ An expandable sidebar with your menu items, that can be repeated on every screen
 | items | A `table` with the fields `id` (int), `svgIcon` (svg-Code as string), `title` (string) and `screen` (if you want to navigate) |
 | expandSidebar | A `bool` that controls if you want to expand (show icon and text) or retract (show only icon) the drawer |
 | topMargin | `int` for the space you want before the menu items start. Can be used creatively, to place a container in the expanded state (see example)
-| navigate | `bool` to control if a click on the menu items navigate to a specified screen |
+| navigate | `bool` to control if a click on the menu items navigate to the specified screen |
 | onSelect | Everything else that should happen on the click of the menu item, best used with `Switch(ThisItem.id, 1, FirstButtonOnSelectAction, 2, ...)` |
 
 ## Tips and Tricks

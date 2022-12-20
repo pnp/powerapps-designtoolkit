@@ -16,7 +16,7 @@ Sliders allow users to make selections from a range of values.
 | valueMin | `int` minimum selectable value |
 | valueMax | `int` maximum selectable value |
 | toggleSize | `int` in px - size of the toggle circle |
-| lineWidth | `int` in px - strngth of the line |
+| lineSize | `int` in px - strength of the line |
 | outsideMargin | `int` in px - margin to all sides of the button, which allows easy spacing with other elements (don't use 0, otherwise ) |
 | showInputLabel | `bool` show additional label to input text via keyboard |
 | showLabel | `bool` display current value on a label on top of the toggle |

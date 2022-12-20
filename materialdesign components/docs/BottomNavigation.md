@@ -12,11 +12,10 @@ Navigate between screens on mobile devices.
 
 | property | description |
 | --- | --- |
-| navContent | `table` that needs the following three properties |
-| navContent-screen | `control` screen you want to navigate to |
-| navContent-svgIcon | `string` svg-code without fill properties |
-| navContent-title | `string` title underneath the icons |
+| items | A `table` with the fields `id` (int), `svgIcon` (svg-Code as string), `title` (string) and `screen` (if you want to navigate) |
 | iconSize | `int` in px - size of the svg-Icons |
+| navigate | `bool` to control if a click on the menu items navigate to the specified screen |
+| onSelect | Everything else that should happen on the click of the menu item, best used with `Switch(ThisItem.id, 1, FirstButtonOnSelectAction, 2, ...)` |
 
 ## Tips and Tricks
 
