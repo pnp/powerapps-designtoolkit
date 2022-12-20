@@ -18,7 +18,6 @@ Checkboxes allow users to select one or more items from a set. Checkboxes can tu
 | svgIconFull | `string` icon in checked state - provide svg-code without fill, will be in primaryColor when checked |
 | svgIconEmpty | `string` icon in unchecked state - provide svg-code without fill, will be in disabledColor when unchecked |
 
-
 ## Tips and Tricks
 
 * the regular checkbox also looks pretty nice with the template

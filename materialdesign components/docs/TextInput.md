@@ -35,11 +35,10 @@ Text fields allow users to enter text into a UI. They typically appear in forms 
 | isError | `bool` specify error condition in here |
 | showErrors | `bool` several colors turn to the specified errorColor, if isError AND showErrors are true |
 
-
 ## Tips and Tricks
 
-* use the isError-property to store your error-condition and reuse in other parts of your app if necessary
-* set showErrors initially to `false` and only start showing, after the first blocked submit, so nobody is greeted by red fields
+* Use the **isError**-property to store your error-condition and reuse in other parts of your app if necessary
+* Set **showErrors** initially to `false` and only start showing, after the first blocked submit, so nobody is greeted by red fields
 
 ## Known limitations
 

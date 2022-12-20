@@ -21,7 +21,6 @@ The input frame matches the outlined text input.
 | isError | `bool` specify error condition in here |
 | showErrors | `bool` several colors turn to the specified errorColor, if isError AND showErrors are true |
 
-
 ## Tips and Tricks
 
 * use the isError-property to store your error-condition and reuse in other parts of your app if necessary

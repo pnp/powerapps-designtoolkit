@@ -20,11 +20,18 @@ We collected information on our main design goals:
 ## Overview of component libraries
 
 - [Material Design component library](materialdesign%20components/../materialdesign%20components/intro.md) - built by [Luise Freese](https://tiwtter.com/LuiseFreese) | @LuiseFreese and [Robin Rosengrün](https://twitter.com/power_r2) |@power_r2
+  - [AppBar](materialdesign%20components/docs/AppBarTop.md)
   - [Banner](materialdesign%20components/docs/Banner.md)
+  - [Bottom Navigation](materialdesign%20components/docs/BottomNavigation.md)
   - [Button](materialdesign%20components/docs/Button.md)
+  - [Checkbox]((materialdesign%20components/docsCheckbox.md))
   - [Contrast Checker](materialdesign%20components/docs/ContrastChecker.md)
   - [Dialog](materialdesign%20components/docs/Dialog.md)
+  - [Generic Input Frame](materialdesign%20components/docs/GerenericInputFrame.md)
   - [Navigation Drawer](materialdesign%20components/docs/NavigationDrawer.md)
   - [Progress Indicator](materialdesign%20components/docs/ProgressIndicator.md)
-  - [Slider](materialdesign%20components/docs/Slider_tbdRobin.md)
+  - [Side Sheet](materialdesign%20components/docs/SideSheet.md))
+  - [Slider](materialdesign%20components/docs/Slider.md)
   - [Snackbar](materialdesign%20components/docs/Snackbar.md)
+  - [TextInput](materialdesign%20components/docs/Textinput.md)
+  - [Toggle](materialdesign%20components/docs/Toggle.md)

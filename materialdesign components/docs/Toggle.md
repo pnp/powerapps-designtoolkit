@@ -18,10 +18,9 @@ Toggles allow users to select one or more items from a set. Toggles can turn an 
 | toggleSize | `int` in px - size of the toggle circle |
 | lineSize | `int` in px - width of the line |
 
-
 ## Tips and Tricks
 
-* it's a toggle - it toggles things, not more, not less!
+* It's a toggle - it toggles things, not more, not less!
 
 ## Known limitations
 

@@ -11,6 +11,7 @@ Common use cases include:
 Mobile time pickers are displayed in dialogs and can be used to select hours, minutes, and a period of time.
 
 ## Demo
+
 ![Timepicker](../assets/cmp_MD_timepicker.gif)
 
 ## Custom properties
@@ -24,7 +25,6 @@ Mobile time pickers are displayed in dialogs and can be used to select hours, mi
 | defaultTime | `time` initial time displayed on the picker  |
 | boxShadow | `bool` displays a subtle boxShadow around the picker |
 | selectedTime (output) | `time` outputs the selected time |
-
 
 ## Tips and Tricks
 

@@ -5,9 +5,8 @@
 The contrast checker is not for active use in your app, but to make sure, that your color choices match W3.org accessability criteria.
 
 ## Demo
-<<<<<<< HEAD
+
 ![ContrastChecker](../assets/cmp_MD_contrastchecker.png)
-=======
 
 ## Custom properties
 
