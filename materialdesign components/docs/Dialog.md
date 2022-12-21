@@ -18,6 +18,8 @@ We've all spent too much time building confirmation dialogs in Power Apps, so he
 | action1/2onSelect | `behavioural Property` - onSelect actions of the 2 buttons |
 | dialogWidth | `int` in px - width of the dialog, height auto adjusts |
 | boxShadow | `bool` - places a subtle box shadow around the dialog |
+| focusedButton | `int` which button should be focused, when the dialog is set to visible 1 / 2 or 0 for no button |
+
 
 ## Tips and Tricks
 
