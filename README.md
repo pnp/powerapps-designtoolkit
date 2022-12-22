@@ -36,4 +36,4 @@ We collected information on our main design goals:
   - [TextInput](materialdesign%20components/docs/Textinput.md)
   - [Toggle](materialdesign%20components/docs/Toggle.md)
   
-  - More to Come!
+  - More component libraries to come!
