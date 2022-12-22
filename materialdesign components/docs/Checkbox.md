@@ -13,7 +13,7 @@ Checkboxes allow users to select one or more items from a set. Checkboxes can tu
 | property | description |
 | --- | --- |
 | default | `bool` default state of the checkbox |
-| onSelect | `behavioural property` formulas you want to execute when selecting th checkbox |
+| onSelect | `behavioural property` formulas you want to execute when selecting the checkbox |
 | outsideMargin | `int` in px - margin to all sides of the checkbox, which allows easy spacing with other elements |
 | svgIconFull | `string` icon in checked state - provide svg-code without fill, will be in primaryColor when checked |
 | svgIconEmpty | `string` icon in unchecked state - provide svg-code without fill, will be in disabledColor when unchecked |
