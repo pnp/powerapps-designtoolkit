@@ -8,7 +8,7 @@ Common use cases include:
 
 * Setting an alarm
 * Scheduling a meeting
-Mobile time pickers are displayed in dialogs and can be used to select hours, minutes, and a period of time.
+* Mobile time pickers are displayed in dialogs and can be used to select hours, minutes, and a period of time.
 
 ## Demo
 
@@ -19,7 +19,7 @@ Mobile time pickers are displayed in dialogs and can be used to select hours, mi
 | property | description |
 | --- | --- |
 | header | `string` title above the timepicker |
-| action1/2text | `string` available actions, Material Desing puts these in CAPITAL LETTERS, button width auto adjusts |
+| action1/2text | `string` available actions, Material Design puts these in CAPITAL LETTERS, button width auto adjusts |
 | action1/2onSelect | `behavioural Property` - onSelect actions of the 2 buttons |
 | format | `int` enter `12` for AM/PM or `24` for a 24h input format  |
 | defaultTime | `time` initial time displayed on the picker  |

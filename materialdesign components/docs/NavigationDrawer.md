@@ -2,7 +2,7 @@
 
 ## Description
 
-An expandable sidebar with your menu items, that can be repeated on every screen. If retracted only the icons show
+An expandable sidebar with your menu items, that can be repeated on every screen. If retracted only the icons show.
 
 ## Demo
 

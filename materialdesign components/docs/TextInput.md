@@ -22,7 +22,7 @@ Text fields allow users to enter text into a UI. They typically appear in forms 
 | suffixText | `string` text that is displayed in the end of the field (in disabledColor) |
 | svgTrailingIcon | `string` svg-code for icon that is displayed in the end of the textbox - space is freed up, if property is empty |
 | showTrailingIcon | `bool` set a condition when to show the trailing icon |
-| iconSize | `int` in px, size of the trailing icon |
+| iconSize | `int` in px - size of the trailing icon |
 | iconColorHex | `string` color of the icon (can use a condition here) |
 | align | `string` alignment of the text |
 | delayOutput | `bool` same as the delay output property on the regular textbox to not trigger API calls on every change |
