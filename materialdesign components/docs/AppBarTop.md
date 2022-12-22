@@ -27,7 +27,7 @@ The top app bar provides content and actions related to the current screen. Itâ€
 
 ## Known limitations
 
-Becaus there is a box shadow, you have to overlap this 10 px to the next control to the bottom.
+Because there is a box shadow, you have to overlap this 10 px to the next control to the bottom.
 
 ## Version
 
