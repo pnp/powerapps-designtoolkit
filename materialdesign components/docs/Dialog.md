@@ -29,7 +29,7 @@ We've all spent too much time building confirmation dialogs in Power Apps, so he
 
 ## Known limitations
 
-Because of the labels and therefore height of the inner container (the actual dialog) is set to auto-height, the height sometimes bugs. To make sure that doesn't happen, use a `Reset(Dialog)` at some point.
+none
 
 ## Version
 
