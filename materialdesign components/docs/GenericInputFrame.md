@@ -23,7 +23,7 @@ The input frame matches the outlined text input.
 
 ## Tips and Tricks
 
-* use the isError-property to store your error-condition and reuse in other parts of your app if necessary
+* use the isError property to store your error-condition and reuse in other parts of your app if necessary
 * set showErrors initially to `false` and only start showing, after the first blocked submit, so nobody is greeted by red fields
 * match the error-color to your input control (see example)
 

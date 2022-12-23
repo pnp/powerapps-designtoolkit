@@ -14,7 +14,7 @@ You have to provide the content, buttons/text/input elements are not part of the
 | property | description |
 | --- | --- |
 | onClose | `behavioural property` formulas you want to execute when clicking on the close icon |
-| iconSize | `int` in px, size of th close icon |
+| iconSize | `int` in px - size of the close icon |
 | title | `string` title on top |
 | adjustPaddingLeft | `int` in px - use to adjust, if Icon & Text are off-center. You can use negative numbers to move everything left |
 
