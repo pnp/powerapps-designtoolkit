@@ -33,7 +33,7 @@ We collected information on our main design goals:
   - [Side Sheet](materialdesign%20components/docs/SideSheet.md)
   - [Slider](materialdesign%20components/docs/Slider.md)
   - [Snackbar](materialdesign%20components/docs/Snackbar.md)
-  - [TextInput](materialdesign%20components/docs/Textinput.md)
+  - [TextInput](materialdesign%20components/docs/TextInput.md)
   - [Toggle](materialdesign%20components/docs/Toggle.md)
   
   - More component libraries to come!
