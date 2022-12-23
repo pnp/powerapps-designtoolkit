@@ -7,7 +7,7 @@ The template should be your starting point for every new app. There are a few ma
 1. All the necessary variables to define the colors and appearance of the components are stored in the **OnStart** -property of the app.
 If you want a "normal" theme, just change the primaryColor and you are good to go.
 2. Many absolute values in new elements (buttons, textinputs, labels, etc.) are exchanged for the variables that are defined in the **OnStart**-property. Example: The standard **Fill** -property of a Button is `RGBA(56, 96, 178, 1)`, in the template it should be `defaults.primaryColor`. Therefore the standard elements match the components from the get go and you don't have to touch too many properties manually and can adjust them afterwards (change your primaryColor in the **OnStart** and the whole app should match that color).
-3. There is a collection of ~5000 Material-Design svg-Icons which is called `MaterialDesignIcons`. Look at the examples to see how you can access them.
+3. There is a collection of ~6000 svg-Icons which is called `MaterialDesignIcons`. You can access them like this: `LookUp(MaterialDesignIcons, name="death-star", svgPath)`. Look at the demo app for examples in image controls or the components.
 4. Many elements have their properties changed up a little bit to match the Material Design theme as closely as possible (some work better than others)
 
 ## Setup
@@ -32,7 +32,7 @@ New controls and components from the library should automatically match your spe
 
 * The first part of the **OnStart**-property is where you input the colors and settings you want to use. Some colors are calculated again in Hex-code to style the SVG-icons. You can use them inside html-Controls or svg-Images.
 * You can introduce different themes like high contrast or dark mode and let the user choose which one they want to use (see examples)
-* Delete the items if you don't use them, the size of the data source is roughly 1 MB
+* Delete the items from the data-tab if you don't use them, the size of the data source is roughly 700 kB
 
 ## Known limitations
 
@@ -52,3 +52,6 @@ New controls and components from the library should automatically match your spe
 The techniques to create this template were discovered by [Sancho Harker](https://twitter.com/iAm_ManCat). Show him some love and tip him a coffee via paypal, if you can afford it. This will save you soooo much time!
 
 If you want to learn more visit [his blog](https://www.iammancat.dev/2022/01/power-apps-branding-template-v3/)
+
+The icons used in the template are imported from https://materialdesignicons.com/ through this repository https://github.com/Templarian/MaterialDesign
+These are partially the original Material Design icons and partially user created in the same style, check the homepage for more information.
