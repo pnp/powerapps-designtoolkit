@@ -2,7 +2,7 @@
 
 ## Description
 
-We've all spent too much time building confirmation dialogs in Power Apps, so here is the ultimate component for that purpose.Following Material Design guidelines this always presents 2 options. The dialog centers itself in both directions and automatically adjusts the height to its content.
+We've all spent too much time building confirmation dialogs in Power Apps, so here is the ultimate component for that purpose. Following Material Design guidelines this always presents 2 options. The dialog centers itself in both directions and automatically adjusts the height to its content.
 
 ## Demo
 
@@ -15,9 +15,9 @@ We've all spent too much time building confirmation dialogs in Power Apps, so he
 | header | `string` optional, if not used the component adjusts in height |
 | text | `string` main text of the dialog |
 | action1/2text | `string` available actions, Material Design puts these in CAPITAL LETTERS, button width auto adjusts |
-| action1/2onSelect | `behavioural Property` - onSelect actions of the 2 buttons |
+| action1/2onSelect | `behavioural Property`  onSelect actions of the 2 buttons |
 | dialogWidth | `int` in px - width of the dialog, height auto adjusts |
-| boxShadow | `bool` - places a subtle box shadow around the dialog |
+| boxShadow | `bool` places a subtle box shadow around the dialog |
 | focusedButton | `int` which button should be focused, when the dialog is set to visible 1 / 2 or 0 for no button |
 
 
@@ -29,7 +29,7 @@ We've all spent too much time building confirmation dialogs in Power Apps, so he
 
 ## Known limitations
 
-Because the labels and therefore height of the inner container (the actual dialog) is set to auto-height, the height sometimes bugs. To make sure that doesn't happen, use a `Reset(Dialog)` at some point
+Because of the labels and therefore height of the inner container (the actual dialog) is set to auto-height, the height sometimes bugs. To make sure that doesn't happen, use a `Reset(Dialog)` at some point.
 
 ## Version
 
