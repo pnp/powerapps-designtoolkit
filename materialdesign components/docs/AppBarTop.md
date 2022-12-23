@@ -27,7 +27,8 @@ The top app bar provides content and actions related to the current screen. Itâ€
 
 ## Known limitations
 
-Because there is a box shadow, you have to overlap this 10 px to the next control to the bottom.
+* Because there is a box shadow, you have to overlap this 10 px to the next control to the bottom.
+* Default-width is set to `App.DesignWidth`. Set to `Parent.Width` for repsonsive apps can't set this as a default, because this will cause "phantom errors" in the editor
 
 ## Version
 
