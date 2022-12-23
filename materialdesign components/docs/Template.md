@@ -36,6 +36,7 @@ New controls and components from the library should automatically match your spe
 
 ## Known limitations
 
+* When changing colors in the OnStart-property sometimes the whole OnStart-property throws an error. Simply change all colors, save and reload the app and everything is back to normal
 * When creating/editing components inside the template you have to enable to access App scope, otherwise all element properties throw errors
 * You have to manually import the library components each time you start a new app, otherwise the components are not linked to the component library in your environment and you won't be able to update
 * Don't use the demo app as template for aforementioned reason
