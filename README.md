@@ -24,7 +24,7 @@ We collected information on our main design goals:
   - [Banner](materialdesign%20components/docs/Banner.md)
   - [Bottom Navigation](materialdesign%20components/docs/BottomNavigation.md)
   - [Button](materialdesign%20components/docs/Button.md)
-  - [Checkbox](materialdesign%20components/docsCheckbox.md)
+  - [Checkbox](materialdesign%20components/docs/Checkbox.md)
   - [Contrast Checker](materialdesign%20components/docs/ContrastChecker.md)
   - [Dialog](materialdesign%20components/docs/Dialog.md)
   - [Generic Input Frame](materialdesign%20components/docs/GenericInputFrame.md)
