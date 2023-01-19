@@ -12,7 +12,7 @@ If you want a "normal" theme, just change the primaryColor and you are good to g
 
 ## Setup
 
-1. Download the [msapp-file](../template/MaterialDesignTemplate.msapp)
+1. Download the [msapp-file](../solution/MaterialDesignTemplate.msapp)
 2. Navigate to [make.powerapps.com](https://make.powerapps.com)
 3. Select your environment
 4. Select **Create**
