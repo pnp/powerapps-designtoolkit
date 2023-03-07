@@ -29,8 +29,12 @@ Video explaining the setup process is following soon!
 2. Download [template file](solution/MaterialDesignTemplate.msapp)
 3. Read documentation of the [template](docs/Template.md)
 4. Open msapp-template-file (create -> Dataverse -> open -> select file)
-5. change the **OnStart**-properties to match your company branding
-6. Build stunning apps in no time!
+5. Select on Plus sign (Insert). 
+6. At the bottom of the screen , find option **Get more components**
+7. Chose **MaterialDesign component library**. (This gets added from solution import done in step 1)
+8. Material Design controls should appear under **Library components**  (Under insert button)
+9. Change the **OnStart**-properties to match your company branding
+10. Build stunning apps in no time!
 
 ## Reference app
 
