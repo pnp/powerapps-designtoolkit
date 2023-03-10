@@ -12,7 +12,7 @@ If you want a "normal" theme, just change the primaryColor and you are good to g
 
 ## Setup
 
-1. Download the [msapp-file](../solution/MaterialDesignTemplate.msapp)
+1. Download the [msapp-file](../solution/MD_Template_v1_1.msapp)
 2. Navigate to [make.powerapps.com](https://make.powerapps.com)
 3. Select your environment
 4. Select **Create**
@@ -33,6 +33,7 @@ New controls and components from the library should automatically match your spe
 * The first part of the **OnStart**-property is where you input the colors and settings you want to use. Some colors are calculated again in Hex-code to style the SVG-icons. You can use them inside html-Controls or svg-Images.
 * You can introduce different themes like high contrast or dark mode and let the user choose which one they want to use (see examples)
 * Delete the items from the data-tab if you don't use them, the size of the data source is roughly 700 kB
+* if you want to use the template file for Custom Pages in Model Driven Apps [download the Solution that contains only a Custom Page](../solution/MaterialDesignCustomPage_1_0_0_3.zip)
 
 ## Known limitations
 

@@ -19,7 +19,7 @@ We collected information on our main design goals:
 
 ## Overview of component libraries
 
-- [Material Design component library](materialdesign%20components/../materialdesign%20components/intro.md) - built by [Luise Freese](https://twitter.com/LuiseFreese) | @LuiseFreese and [Robin Rosengrün](https://twitter.com/power_r2) |@power_r2
+- [Material Design component library](materialdesign%20components/../materialdesign%20components/intro.md) - built by [Luise Freese](https://twitter.com/LuiseFreese) | @LuiseFreese and [Robin Rosengrün](https://twitter.com/power_r2) | @power_r2
   - [AppBar](materialdesign%20components/docs/AppBarTop.md)
   - [Banner](materialdesign%20components/docs/Banner.md)
   - [Bottom Navigation](materialdesign%20components/docs/BottomNavigation.md)

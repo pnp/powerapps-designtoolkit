@@ -42,7 +42,7 @@ Text fields allow users to enter text into a UI. They typically appear in forms 
 
 ## Known limitations
 
-* none
+* Resetting is unreliable
 
 ## Version
 
