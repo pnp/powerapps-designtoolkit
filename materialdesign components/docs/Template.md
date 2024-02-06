@@ -12,7 +12,7 @@ If you want a "normal" theme, just change the primaryColor and you are good to g
 
 ## Setup
 
-1. Download the [msapp-file](../solution/MD_Template_v1_1.msapp)
+1. Download the [msapp-file](../solution/MD_Template_v1_1.msapp) 
 2. Navigate to [make.powerapps.com](https://make.powerapps.com)
 3. Select your environment
 4. Select **Create**
@@ -35,6 +35,17 @@ New controls and components from the library should automatically match your spe
 * Delete the items from the data-tab if you don't use them, the size of the data source is roughly 700 kB
 * if you want to use the template file for Custom Pages in Model Driven Apps [download the Solution that contains only a Custom Page](../solution/MaterialDesignCustomPage_1_0_0_3.zip)
 
+## Experimental Version with user-defined formulas
+
+You can try out the [experimental version](../solution/MD_Template_v1_2_experimental.msapp). Use at own risk, as it uses the new experimental user-defined functions.
+The following functions are defined:
+* nfHexColor(color): retrieves Hex-Code from PowerApps-Color
+* nfColorTransparent(color, transparency): makes Color Transparent
+* nfIcon(iconName): retrieve icon SVG code of the built in icon table by name
+* nfColorSVG(svgCode,color): sets fill property for SVG to color it
+* nfWrapSVG(svgCode): wraps SVG to display on an image control
+* nfColoredIcon(iconName,color): retrieve icon SVG code of the built in icon table by name, assigns color and wraps it to directly display on an image control
+
 ## Known limitations
 
 * When changing colors in the OnStart-property sometimes the whole OnStart-property throws an error. Simply change all colors, save and reload the app and everything is back to normal
@@ -47,6 +58,8 @@ New controls and components from the library should automatically match your spe
 | Version | description |
 | --- | --- |
 | 1.0.0 | First version |
+| 1.1.0 | fixed errors with date picker in a new Power Apps authoring version |
+| 1.2.0 | added experimental version |
 
 ## Reference and credit
 
